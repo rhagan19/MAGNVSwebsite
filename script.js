@@ -1,4 +1,21 @@
 document.addEventListener('DOMContentLoaded', function () {
+    // Initialize the tooltip and popover from Bootstrap
+    $('[data-toggle="tooltip"]').tooltip();
+    $('[data-toggle="popover"]').popover();
+
+    // Initialize the Select2 plugin for multiselect dropdowns
+    $('.multiselect').select2({
+        placeholder: "Select an option"
+    });
+
+    // Customizing the search box
+    $('#search').attr('placeholder', 'MAGNVS Library');
+    $('#search').addClass('form-control');
+
+    // Curved corners for search box
+    $('#search').css('border-radius', '15px');
+
+    // Fetch and populate data
     const filterOffenseDefenseSelect = document.getElementById('filterOffenseDefense');
     const filterFocusSelect = document.getElementById('filterFocus');
     const filterDisciplineSelect = document.getElementById('filterDiscipline');
@@ -6,7 +23,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const resultsDiv = document.getElementById('results');
     let techniquesData = []; // Variable to store the fetched JSON data
 
-    // Fetch JSON data
     async function fetchData() {
         try {
             const response = await fetch('URL_TO_YOUR_JSON_FILE');
@@ -17,23 +33,20 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // Extract unique values for a given attribute from the techniques data
     function extractUniqueValues(attribute) {
         return [...new Set(techniquesData.map(technique => technique[attribute]))];
     }
 
-    // Populate dropdown menu with unique values for a given attribute
     function populateDropdown(selectElement, values) {
         selectElement.innerHTML = '';
-        selectElement.appendChild(new Option('All', '')); // Add 'All' option
+        selectElement.appendChild(new Option('All', ''));
         values.forEach(value => {
             selectElement.appendChild(new Option(value, value));
         });
     }
 
-    // Update dropdown menus with unique values for each attribute
     async function updateDropdowns() {
-        await fetchData(); // Fetch data before updating dropdowns
+        await fetchData();
         const offenseDefenseValues = extractUniqueValues('offenseDefense');
         const focusValues = extractUniqueValues('focus');
         const disciplineValues = extractUniqueValues('discipline');
@@ -45,7 +58,6 @@ document.addEventListener('DOMContentLoaded', function () {
         populateDropdown(filterTargetsSelect, targetsValues);
     }
 
-    // Filter techniques based on selected options and display results
     function filterAndDisplayResults() {
         const selectedOffenseDefense = filterOffenseDefenseSelect.value;
         const selectedFocus = filterFocusSelect.value;
@@ -62,7 +74,6 @@ document.addEventListener('DOMContentLoaded', function () {
         displayResults(filteredTechniques);
     }
 
-    // Display filtered results
     function displayResults(filteredTechniques) {
         resultsDiv.innerHTML = '';
         filteredTechniques.forEach(technique => {
@@ -77,13 +88,11 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Event listeners for dropdown menu changes
     filterOffenseDefenseSelect.addEventListener('change', filterAndDisplayResults);
     filterFocusSelect.addEventListener('change', filterAndDisplayResults);
     filterDisciplineSelect.addEventListener('change', filterAndDisplayResults);
     filterTargetsSelect.addEventListener('change', filterAndDisplayResults);
 
-    // Initialize dropdown menus and display results when the page loads
     updateDropdowns();
     filterAndDisplayResults();
 });
