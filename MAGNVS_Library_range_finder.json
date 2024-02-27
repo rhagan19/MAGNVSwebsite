@@ -1,0 +1,94 @@
+{
+    "techniques": [
+        {
+            "video_name": "Course 11: Video 1",
+            "course_name": "CSA Striking System",
+            "name": "Rangefinder Drill",
+            "description": "A multi-stage sparring drill designed to improve range management, offensive strategy, and defensive integrity in a sparring context. It incorporates mirroring footwork, appropriate weapon selection for ranges, and progressively integrates boxing, teepees, knees, elbows, and round kicks. The drill emphasizes tactical engagement, teaching fighters to maintain optimal distance for power strikes and to adapt to dynamic movements within a sparring session.",
+            "offensive": {
+                "focus": "Offensive & Defensive",
+                "types": [
+                    "Boxing",
+                    "Teepees",
+                    "Knees",
+                    "Elbows",
+                    "Round Kicks"
+                ],
+                "disciplines": [
+                    "Muay Thai",
+                    "MMA"
+                ],
+                "targets": [
+                    "General"
+                ],
+                "strategies": {
+                    "range_management": "Adapting to the opponent's movements to maintain optimal distance for strikes.",
+                    "weapon_selection": "Choosing appropriate strikes based on the opponent's position and movement.",
+                    "offensive_variability": "Incorporating a diverse set of strikes to engage effectively at all ranges."
+                },
+                "techniques": [
+                    {
+                        "variation": "Stage 1 - Footwork Mirroring",
+                        "description": "One partner leads with movement, dictating range, while the other adapts to maintain optimal striking distance without engaging in offense.",
+                        "timestamp": "00:01:07:05 - 00:01:10:02"
+                    },
+                    {
+                        "variation": "Stage 2 - Adding Boxing",
+                        "description": "Integration of boxing into the drill, allowing the following partner to use hands for offensive engagement while continuing to manage range.",
+                        "timestamp": "00:03:20:05 - 00:04:00:14"
+                    },
+                    {
+                        "variation": "Stage 3 - Integration of Teepees",
+                        "description": "Adding teepees to the drill to introduce leg strikes into the range management and offensive strategy.",
+                        "timestamp": "00:05:35:06 - 00:06:45:10"
+                    },
+                    {
+                        "variation": "Final Evolution - Full Arsenal",
+                        "description": "Incorporates boxing, elbows, knees, teepees, and round kicks, enhancing the drill's complexity and realism by simulating a dynamic sparring environment.",
+                        "timestamp": "00:07:44:00 - 00:08:41:20"
+                    }
+                ]
+            },
+            "defensive": {
+                "focus": "Defensive Integrity",
+                "types": [
+                    "Evasion",
+                    "Block",
+                    "Counter"
+                ],
+                "disciplines": [
+                    "Muay Thai",
+                    "MMA"
+                ],
+                "targets": [
+                    "General"
+                ],
+                "strategies": {
+                    "defensive_adaptation": "Adapting defensive postures and counters based on the opponent's offensive actions.",
+                    "maintaining_distance": "Using footwork and defensive movements to prevent getting too close or too far from the opponent.",
+                    "defensive_check": "Allowing the leader to occasionally strike back to test the follower's defensive readiness."
+                },
+                "notes": "This drill also serves to keep fighters honest and defensively sound by introducing counter-strike opportunities for the leader, simulating a real sparring scenario where both fighters can engage offensively."
+            },
+            "transcript_reference": "00:00:06:08 - 00:12:13:12",
+            "key_points": [
+                {
+                    "point": "Teaches fighters to maintain optimal striking distance and adapt to opponent's movements.",
+                    "timestamp": "00:01:07:05 - 00:01:10:02"
+                },
+                {
+                    "point": "Progressively integrates various striking techniques to simulate a dynamic sparring environment.",
+                    "timestamp": "00:05:35:06 - 00:06:45:10"
+                },
+                {
+                    "point": "Enhances offensive and defensive capabilities by incorporating a full arsenal of strikes and promoting tactical engagement.",
+                    "timestamp": "00:07:44:00 - 00:08:41:20"
+                },
+                {
+                    "point": "Focuses on the strategic application of strikes based on range and opponent's position, improving fight IQ.",
+                    "timestamp": "00:01:07:05 - 00:12:13:12"
+                }
+            ]
+        }
+    ]
+}

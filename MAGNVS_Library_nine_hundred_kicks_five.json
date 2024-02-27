@@ -1,0 +1,77 @@
+{
+    "techniques": [
+        {
+            "video_name": "Course 10: Video 5",
+            "course_name": "CSA Striking System",
+            "name": "Round Kick Drill with Pole Bag",
+            "description": "A specialized drill focusing on the correct execution of the round kick, a fundamental Muay Thai and MMA technique. This drill emphasizes balance, timing, pivot, and proper shin placement using a pole bag to enhance the kicker's mechanics and effectiveness.",
+            "offensive": {
+                "focus": "Offensive",
+                "types": [
+                    "Round Kicks"
+                ],
+                "disciplines": [
+                    "Muay Thai",
+                    "MMA"
+                ],
+                "targets": [
+                    "General"
+                ],
+                "strategies": {
+                    "balance_and_pivot": "Practicing balance and pivot on the ball of the foot to maximize kick power and efficiency.",
+                    "shin_placement": "Ensuring proper shin placement against the target for optimal impact and reduced risk of injury.",
+                    "flexibility_and_body_mechanics": "Improving flexibility and body mechanics to achieve a high-quality round kick with proper hip, knee, and toe alignment."
+                },
+                "techniques": [
+                    {
+                        "variation": "Right Roundhouse Kick",
+                        "description": "A powerful kick delivered by turning the body and pivoting on the foot, aiming to strike with the shin while maintaining balance and proper body alignment.",
+                        "timestamp": "00:01:40:08 - 00:02:00:01"
+                    },
+                    {
+                        "variation": "Left Roundhouse Kick",
+                        "description": "Similar to the right roundhouse kick, focusing on the opposite side to ensure balanced kicking ability and versatility in attacks.",
+                        "timestamp": "00:02:16:22 - 00:03:01:14"
+                    }
+                ]
+            },
+            "defensive": {
+                "focus": "Defensive",
+                "types": [
+                    "Evasion"
+                ],
+                "disciplines": [
+                    "Muay Thai",
+                    "MMA"
+                ],
+                "targets": [
+                    "General"
+                ],
+                "strategies": {
+                    "preventing_counterattacks": "Using the round kick effectively to keep the opponent at bay and limit their opportunities for counterattacks.",
+                    "enhancing_mobility": "Improving kick execution to enhance mobility and the ability to quickly reposition after attacking."
+                },
+                "notes": "This drill's emphasis on technique and form aims to build a more powerful and precise round kick, serving both offensive and defensive purposes in combat."
+            },
+            "transcript_reference": "00:00:06:10 - 00:04:03:02",
+            "key_points": [
+                {
+                    "point": "Focus on the detailed mechanics of the round kick, including pivot, shin placement, and counterbalance for improved effectiveness.",
+                    "timestamp": "00:00:57:06 - 00:01:18:07"
+                },
+                {
+                    "point": "Utilization of the pole bag to specifically target and refine the roundhouse kick's execution, highlighting the importance of flexibility, pivot, and technique.",
+                    "timestamp": "00:00:26:18 - 00:00:49:12"
+                },
+                {
+                    "point": "Demonstration of the drill with both right and left roundhouse kicks to ensure balanced skill development and adaptability in fight situations.",
+                    "timestamp": "00:01:40:08 - 00:03:01:14"
+                },
+                {
+                    "point": "Emphasis on the significance of the round kick in combat sports for scoring, offensive strategy, and defensive maneuvers.",
+                    "timestamp": "00:00:55:06 - 00:01:03:01"
+                }
+            ]
+        }
+    ]
+}

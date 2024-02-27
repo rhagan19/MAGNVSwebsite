@@ -1,0 +1,71 @@
+{
+    "techniques": [
+        {
+            "video_name": "Course 1: Video 4",
+            "course_name": "CSA Striking System",
+            "name": "Final Punch Technique in CSA Boxing System",
+            "description": "Introduces the spinning back fist and spinning hammer fist as the culminating techniques in the CSA boxing system, highlighting their application, legality in different rule sets, and execution strategies.",
+            "offensive": {
+                "focus": "Offensive",
+                "types": [
+                    "Spinning Back Fist",
+                    "Spinning Hammer Fist"
+                ],
+                "disciplines": [
+                    "Boxing",
+                    "Kickboxing",
+                    "MMA"
+                ],
+                "targets": [
+                    "Head"
+                ],
+                "strategies": {
+                    "establishing": "Utilizing spinning techniques to surprise the opponent and exploit openings.",
+                    "faking": "Setting up with feints or missed strikes to create opportunities for spinning attacks.",
+                    "combining": "Incorporating spins into combinations, following kicks or punches to catch the opponent off-guard."
+                },
+                "techniques": [
+                    {
+                        "variation": "Spinning Back Fist",
+                        "description": "Executed by spinning and striking with the back of the glove, legal under specific kickboxing and MMA rules.",
+                        "timestamp": "00:10:02-00:23:05"
+                    },
+                    {
+                        "variation": "Spinning Hammer Fist",
+                        "description": "A spinning strike using the bottom of the fist, considered more powerful and less risky for hand injuries.",
+                        "timestamp": "00:23:06-00:51:16"
+                    }
+                ]
+            },
+            "defensive": {
+                "focus": "Defensive",
+                "types": [
+                    "Evasion",
+                    "Block",
+                    "Counter"
+                ],
+                "disciplines": [
+                    "Boxing",
+                    "Kickboxing",
+                    "MMA"
+                ],
+                "targets": [
+                    "Head"
+                ],
+                "strategies": {
+                    "establishing": "Anticipating the opponent's spin to dodge or block effectively.",
+                    "faking": "Using the opponent's spin to set up counterattacks or takedowns.",
+                    "combining": "Blending movement and guarding techniques to neutralize spinning strikes."
+                },
+                "notes": "Emphasizes the importance of understanding the rules of the sport to avoid illegal strikes and the need for proper execution to prevent self-injury."
+            },
+            "transcript_reference": "00:00:06:09 - 00:04:03:08",
+            "key_points": [
+                "The spinning back fist and hammer fist are advanced techniques requiring proper setup and execution.",
+                "Knowledge of the competition rules is crucial to employ these techniques legally and effectively.",
+                "Proper body mechanics, such as level changing and weight transfer, enhance the power and safety of spinning strikes.",
+                "Strategic use of these techniques can lead to significant victories and highlight reel knockouts."
+            ]
+        }
+    ]
+}

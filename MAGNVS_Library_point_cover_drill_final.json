@@ -1,0 +1,61 @@
+{
+    "techniques": [
+        {
+            "video_name": "Course 7: Video 3",
+            "course_name": "CSA Striking System",
+            "name": "Finalizing the 14 Point Cover Drill",
+            "description": "Completes the 14 Point Cover Drill with the inclusion of defenses against body jabs and crosses, and head parries. This final part consolidates the entire drill, emphasizing the integration of movement, defense, and positioning against a variety of attacks. It showcases the drill's comprehensive approach to defensive techniques, combining slips, bobs, blocks, and parries to form a complete defensive strategy.",
+            "offensive": false,
+            "defensive": {
+                "focus": "Comprehensive Defense",
+                "types": [
+                    "Cross Block",
+                    "Parry"
+                ],
+                "disciplines": [
+                    "Boxing",
+                    "Kickboxing",
+                    "Muay Thai",
+                    "Mixed Martial Arts"
+                ],
+                "targets": [
+                    "Head",
+                    "Body"
+                ],
+                "strategies": {
+                    "cross_block_body": "A defense against body jabs and crosses, using the elbow and turning the body for protection while keeping the guard high.",
+                    "parry_head": "Deflecting jabs and crosses aimed at the head, with an emphasis on minimal movement and maintaining a guard for immediate counterattacks."
+                },
+                "techniques": [
+                    {
+                        "variation": "Cross Block against Body Jab",
+                        "description": "Defending against a body jab by using the elbow to protect the torso while keeping the opposite hand up to guard the face.",
+                        "timestamp": "00:15:14-00:19:08"
+                    },
+                    {
+                        "variation": "Cross Block against Body Cross",
+                        "description": "Similar to the body jab defense, using the elbow and body turn to block a cross aimed at the body.",
+                        "timestamp": "00:19:09-00:20:13"
+                    },
+                    {
+                        "variation": "Parry against Head Jab",
+                        "description": "Redirecting a jab away from the head with a hand movement, accompanied by a head movement to avoid the punch.",
+                        "timestamp": "00:22:03-00:23:07"
+                    },
+                    {
+                        "variation": "Parry against Head Cross",
+                        "description": "Using the hand to deflect a cross while moving the head to the side, ensuring the punch does not make contact.",
+                        "timestamp": "00:23:08-00:24:07"
+                    }
+                ]
+            },
+            "transcript_reference": "00:00:06:08 - 00:02:58:25",
+            "key_points": [
+                "The final four pieces of the 14 Point Cover Drill focus on defenses against lower body attacks and parrying techniques for head strikes.",
+                "Emphasizes the importance of a tight defense, using elbows for body shots and hands for head shots, while maintaining the ability to counter.",
+                "Incorporates movement with defense, illustrating how slipping, pulling, ducking, and parrying can be seamlessly combined.",
+                "Demonstrates the versatility of the drill in preparing fighters for a wide range of attacks, making it a comprehensive tool for defensive training."
+            ]
+        }
+    ]
+}

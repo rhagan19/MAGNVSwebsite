@@ -1,0 +1,84 @@
+{
+    "techniques": [
+        {
+            "video_name": "Course 2: Video 2",
+            "course_name": "CSA Striking System",
+            "name": "Midline Roundhouse Kicks",
+            "description": "Expands the roundhouse kick numbering system to include midline (body) targets, detailing specific targets for left and right body kicks, including low and high variations, and emphasizing strategic application for Muay Thai, kickboxing, and MMA.",
+            "offensive": {
+                "focus": "Offensive",
+                "types": [
+                    "Roundhouse Kicks"
+                ],
+                "disciplines": [
+                    "Muay Thai",
+                    "MMA",
+                    "Kickboxing"
+                ],
+                "targets": [
+                    "Liver",
+                    "Spleen",
+                    "Ribs",
+                    "Arms"
+                ],
+                "strategies": {
+                    "establishing": "Distinguishing between different targets for body kicks to maximize damage and strategic advantage.",
+                    "faking": "Using feints and level changes to create openings for body kicks.",
+                    "combining": "Incorporating arm pins and angle adjustments to safely deliver powerful kicks and reduce counter-attack risks."
+                },
+                "techniques": [
+                    {
+                        "variation": "Right Body Kick Low",
+                        "description": "Targets lower organs like the liver, thrown with a slight angle to minimize counter risks.",
+                        "timestamp": "00:34:07-00:36:17"
+                    },
+                    {
+                        "variation": "Left Body Kick Low",
+                        "description": "Aimed at the spleen or lower ribs, using footwork to create an advantageous angle for the strike.",
+                        "timestamp": "00:39:23-00:41:15"
+                    },
+                    {
+                        "variation": "Right Body Kick High (Arm Pin)",
+                        "description": "Executed to pin the opponent's arm, reducing their defensive capability and potentially causing damage to the arm.",
+                        "timestamp": "00:47:07-00:49:11"
+                    },
+                    {
+                        "variation": "Left Body Kick High (Arm Pin)",
+                        "description": "Similar to the right high kick with an arm pin, it aims to compromise the opponent's guard and deliver significant impact.",
+                        "timestamp": "00:50:10-00:52:14"
+                    }
+                ]
+            },
+            "defensive": {
+                "focus": "Defensive",
+                "types": [
+                    "Guarding",
+                    "Evasion",
+                    "Counter"
+                ],
+                "disciplines": [
+                    "Muay Thai",
+                    "MMA",
+                    "Kickboxing"
+                ],
+                "targets": [
+                    "Body",
+                    "Arms"
+                ],
+                "strategies": {
+                    "establishing": "Maintaining a solid guard against body kicks and preparing for arm pin defenses.",
+                    "faking": "Anticipating the opponent's body kick setups to counter effectively or evade.",
+                    "combining": "Using movement and counters to exploit the momentary vulnerability created by the opponent's kick attempts."
+                },
+                "notes": "Emphasizes the importance of not just blocking but also counteracting effectively to take advantage of the opponent's commitment to a kick."
+            },
+            "transcript_reference": "00:00:06:11 - 00:04:52:14",
+            "key_points": [
+                "Introduction to midline roundhouse kicks, focusing on strategic targets for body kicks in combat sports.",
+                "The critical role of angle and stance adjustments in safely executing and landing powerful body kicks.",
+                "The strategic value of arm pins in high body kicks to wear down the opponent's arm and reduce their ability to counter.",
+                "Techniques for minimizing the risk of counters when throwing body kicks by adjusting position and using head movement."
+            ]
+        }
+    ]
+}

@@ -1,0 +1,63 @@
+{
+    "techniques": [
+        {
+            "video_name": "Course 7: Video 1",
+            "course_name": "CSA Striking System",
+            "name": "14 Point Cover Drill",
+            "description": "Introduces the 14 point cover drill, a comprehensive defensive drill focused on boxing defense techniques including slipping, pulling, and ducking punches. Originating from Erik Paulson's teachings, this drill offers a structured approach to learning and refining defensive movements against various strikes.",
+            "offensive": false,
+            "defensive": {
+                "focus": "Defensive",
+                "types": [
+                    "Slipping",
+                    "Pulling",
+                    "Ducking"
+                ],
+                "disciplines": [
+                    "Boxing",
+                    "Kickboxing",
+                    "Muay Thai",
+                    "Mixed Martial Arts"
+                ],
+                "targets": [
+                    "Self"
+                ],
+                "strategies": {
+                    "slip_jab": "Involves moving the head slightly to the side to evade a jab without dropping guard or losing balance.",
+                    "slip_cross": "Similar to slipping the jab but in the opposite direction, focusing on minimal movement to avoid overexposure.",
+                    "pull_jab": "Requires a slight backward movement to make the jab miss while staying in position to counter.",
+                    "duck_cross": "Entails bending at the knees and slightly turning the shoulder to avoid a cross, setting up for potential counters."
+                },
+                "techniques": [
+                    {
+                        "variation": "Slip Jab",
+                        "description": "Evading the jab by moving the head slightly to one side, ensuring hands remain up and body balanced.",
+                        "timestamp": "00:56:02-00:58:10"
+                    },
+                    {
+                        "variation": "Slip Cross",
+                        "description": "Similar to slipping the jab, but adjusted to evade a cross, emphasizing the importance of minimal movement.",
+                        "timestamp": "00:58:11-01:00:06"
+                    },
+                    {
+                        "variation": "Pull Jab",
+                        "description": "A backward movement to make the jab miss, with the body and feet ready for immediate counter-attack.",
+                        "timestamp": "01:00:07-01:02:00"
+                    },
+                    {
+                        "variation": "Duck Cross",
+                        "description": "Ducking under the cross with a knee bend and shoulder turn, positioning for a counter while avoiding the strike.",
+                        "timestamp": "01:02:01-01:03:16"
+                    }
+                ]
+            },
+            "transcript_reference": "00:00:06:09 - 00:02:01:01",
+            "key_points": [
+                "The 14 point cover drill is an effective method for learning and practicing boxing defense techniques.",
+                "Focuses on minimal movement for slipping and pulling to maintain balance and readiness for counters.",
+                "Ducking involves a combination of bending and turning, which prepares the fighter for immediate counter-attacks.",
+                "This drill provides a foundation that is applicable across multiple combat sports, emphasizing adaptability and quick defensive responses."
+            ]
+        }
+    ]
+}

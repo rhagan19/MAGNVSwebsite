@@ -1,0 +1,79 @@
+{
+    "techniques": [
+        {
+            "video_name": "Course 6: Video 1",
+            "course_name": "CSA Striking System",
+            "name": "Four Count Combination Add-Ons",
+            "description": "Introduces the concept of 'Four Count' combinations as a method to seamlessly integrate punches and kicks into versatile striking sequences. This approach emphasizes fluid transitions between strikes, enhancing the fighter's ability to adapt and combine different types of attacks (punches to kicks, kicks to punches) within a compact four-strike format.",
+            "offensive": {
+                "focus": "Offensive",
+                "types": [
+                    "Combination Work",
+                    "Striking Fluidity",
+                    "Adaptability"
+                ],
+                "disciplines": [
+                    "Muay Thai",
+                    "Mixed Martial Arts"
+                ],
+                "targets": [
+                    "Leg",
+                    "Body",
+                    "Head"
+                ],
+                "strategies": {
+                    "punch_kick_integration": "Promotes the integration of punches and kicks into cohesive sequences, enabling fighters to maintain offensive momentum and pressure.",
+                    "adaptive_combinations": "Encourages the development of adaptable combinations that can be modified on the fly, responding to opponents' movements and openings.",
+                    "strike_variation": "Facilitates strike variation, allowing fighters to mix attacks across different levels (low, mid, high) and types (punches, kicks) to create unpredictable patterns."
+                },
+                "techniques": [
+                    {
+                        "variation": "Jab-Right Kick-Cross-Left Kick",
+                        "description": "Starts with a jab to set up a right leg kick, followed by a cross to transition into a left leg kick, showcasing the fluidity between punches and kicks.",
+                        "timestamp": "00:21:00-00:22:05"
+                    },
+                    {
+                        "variation": "Cross-Left Kick-Jab-Right Kick",
+                        "description": "Begins with a cross to lead into a left leg kick, then uses a jab to set up a final right leg kick, emphasizing the versatility of striking angles.",
+                        "timestamp": "00:22:06-00:23:04"
+                    },
+                    {
+                        "variation": "Right Kick-Hook-Cross-Left Kick",
+                        "description": "Opens with a right leg kick, followed by a hook and cross combination, and finishes with a left leg kick, integrating both punches and kicks.",
+                        "timestamp": "00:32:16-00:34:13"
+                    },
+                    {
+                        "variation": "Left Kick-Cross-Hook-Right Kick",
+                        "description": "Initiates with a left leg kick, proceeds with a cross and hook, and concludes with a right leg kick, highlighting the adaptability of striking sequences.",
+                        "timestamp": "00:34:14-00:36:14"
+                    }
+                ]
+            },
+            "defensive": {
+                "focus": "Adaptive Defense",
+                "types": [
+                    "Positional Awareness",
+                    "Counter-Preparation"
+                ],
+                "disciplines": [
+                    "Muay Thai",
+                    "Mixed Martial Arts"
+                ],
+                "targets": [
+                    "Self"
+                ],
+                "strategies": {
+                    "positional_adjustment": "Emphasizes the importance of adjusting position and stance to seamlessly transition between strikes, maintaining a balance between offense and defense.",
+                    "counter_readiness": "Prepares fighters to anticipate and prepare for counterattacks, utilizing the transitions within four count combinations to set up defensive maneuvers or counter-strikes."
+                },
+                "notes": "While engaging in four count combinations, fighters must remain vigilant of their defensive posture and openings, ensuring that they can respond to or evade incoming strikes."
+            },
+            "transcript_reference": "00:00:06:09 - 00:04:17:04",
+            "key_points": [
+                "Four count combinations offer a structured yet adaptable framework for integrating diverse strikes into fluid sequences.",
+                "The simplicity and versatility of four counts make them suitable for enhancing offensive strategy and adaptability in real-time combat scenarios.",
+                "Defensive considerations are crucial when employing four count combinations, emphasizing the need for positional awareness and readiness for counteractions."
+            ]
+        }
+    ]
+}

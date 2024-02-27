@@ -1,0 +1,84 @@
+{
+    "techniques": [
+        {
+            "video_name": "Course 10: Video 4",
+            "course_name": "CSA Striking System",
+            "name": "Left Body Kick Drill",
+            "description": "This drill focuses on mastering the left body kick, a fundamental technique in Muay Thai and MMA for scoring, defense, and attacking the liver. It encompasses three variations of the kick: the switch, step, and swing, each serving a strategic purpose in combat sports.",
+            "offensive": {
+                "focus": "Offensive",
+                "types": [
+                    "Kicks"
+                ],
+                "disciplines": [
+                    "Muay Thai",
+                    "MMA"
+                ],
+                "targets": [
+                    "Body",
+                    "Liver"
+                ],
+                "strategies": {
+                    "switch_kick": "A quick stance switch to deliver a powerful body kick, useful for catching an opponent off-guard.",
+                    "step_kick": "Involves stepping forward to close distance rapidly before launching the kick, enhancing reach and power.",
+                    "swing_kick": "Swinging back into a southpaw stance for another kick, allowing for continuous attack pressure."
+                },
+                "techniques": [
+                    {
+                        "variation": "Switch Kick",
+                        "description": "A rapid stance change followed by a left body kick, aimed at surprising the opponent and penetrating their defense.",
+                        "timestamp": "00:01:34:15 - 00:01:58:16"
+                    },
+                    {
+                        "variation": "Step Kick",
+                        "description": "A forward step to close the gap, then executing a powerful left body kick, ideal for reaching distant targets or breaking through guard.",
+                        "timestamp": "00:01:58:17 - 00:02:14:02"
+                    },
+                    {
+                        "variation": "Swing Kick",
+                        "description": "After delivering a kick, swinging back into southpaw to immediately follow up with another left body kick, maintaining offensive momentum.",
+                        "timestamp": "00:02:14:02 - 00:02:43:02"
+                    }
+                ]
+            },
+            "defensive": {
+                "focus": "Defensive",
+                "types": [
+                    "Evasion",
+                    "Block"
+                ],
+                "disciplines": [
+                    "Muay Thai",
+                    "MMA"
+                ],
+                "targets": [
+                    "General"
+                ],
+                "strategies": {
+                    "preoccupying_opponent": "Utilizing the left body kick to force the opponent into a defensive posture, reducing their offensive output.",
+                    "liver_targeting": "Specifically aiming the left body kick at the liver to inflict maximum damage and potentially incapacitate the opponent."
+                },
+                "notes": "The left body kick drill is crucial for developing an effective striking strategy, focusing on accuracy, power, and the ability to adapt the kick based on the opponent's movements and responses."
+            },
+            "transcript_reference": "00:00:06:08 - 00:02:59:24",
+            "key_points": [
+                {
+                    "point": "Emphasis on the left body kick as a critical technique in Muay Thai and MMA for its scoring potential, defensive utility, and ability to target the liver.",
+                    "timestamp": "00:00:23:02 - 00:01:03:06"
+                },
+                {
+                    "point": "Introduction of three variations of the left body kick (switch, step, swing) to enhance adaptability and effectiveness in different combat situations.",
+                    "timestamp": "00:01:34:15 - 00:02:43:02"
+                },
+                {
+                    "point": "Incorporation of punches in the drill to create combinations that set up the left body kick, increasing the likelihood of landing the kick effectively.",
+                    "timestamp": "00:02:03:01 - 00:02:43:02"
+                },
+                {
+                    "point": "Strategic use of the left body kick to control the fight's pace, dictate the range, and open opportunities for further attacks.",
+                    "timestamp": "00:02:46:21 - 00:02:59:24"
+                }
+            ]
+        }
+    ]
+}

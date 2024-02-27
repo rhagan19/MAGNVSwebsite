@@ -1,0 +1,80 @@
+{
+    "techniques": [
+        {
+            "video_name": "Course 4: Video 2",
+            "course_name": "CSA Striking System",
+            "name": "Basic Combos 6-10",
+            "description": "Extension of the basic boxing combinations within the CSA striking system, focusing on advanced combinations that incorporate uppercuts and alternate between hook and cross punches for dynamic striking patterns.",
+            "offensive": {
+                "focus": "Offensive",
+                "types": [
+                    "Striking"
+                ],
+                "disciplines": [
+                    "Boxing"
+                ],
+                "targets": [
+                    "Head",
+                    "Body"
+                ],
+                "strategies": {
+                    "diversification": "Introduces uppercuts and varying patterns of hooks and crosses to disrupt opponents' defenses and create openings.",
+                    "adaptation": "Combos are adaptable, allowing for strategic modifications based on opponent's stance and responses.",
+                    "expansion": "While rooted in boxing, these combos provide a foundation for integration with Muay Thai techniques for enhanced combat effectiveness."
+                },
+                "techniques": [
+                    {
+                        "variation": "Cross-Hook-Cross",
+                        "description": "A powerful three-strike combination focusing on alternating between straight and curved punches to penetrate defenses.",
+                        "timestamp": "00:24:02-00:27:00"
+                    },
+                    {
+                        "variation": "Cross-Hook-Cross-Hook",
+                        "description": "An extension of the previous combo with an additional hook to maintain offensive pressure and target the sides.",
+                        "timestamp": "00:27:00-00:29:18"
+                    },
+                    {
+                        "variation": "Rear Uppercut-Hook-Cross",
+                        "description": "Starts with an uppercut to lift the guard followed by a hook and cross to exploit opened defenses.",
+                        "timestamp": "00:31:13-00:32:23"
+                    },
+                    {
+                        "variation": "Lead Uppercut-Cross-Hook",
+                        "description": "Begins with a lead uppercut, setting up for a cross and hook to attack from varying angles.",
+                        "timestamp": "00:35:00-00:36:24"
+                    },
+                    {
+                        "variation": "Cross-Uppercut-Cross",
+                        "description": "Focuses on penetrating straight attacks with an uppercut in the middle to disrupt the opponent's guard.",
+                        "timestamp": "00:39:15-00:40:23"
+                    }
+                ]
+            },
+            "defensive": {
+                "focus": "Defensive",
+                "types": [
+                    "Positioning",
+                    "Guard Manipulation"
+                ],
+                "disciplines": [
+                    "Boxing"
+                ],
+                "targets": [
+                    "Head",
+                    "Body"
+                ],
+                "strategies": {
+                    "counter-preparation": "Emphasizes the importance of ending combinations in positions that minimize vulnerability to counters.",
+                    "guard manipulation": "Utilizes combinations to manipulate the opponent's guard, creating opportunities for follow-up attacks."
+                },
+                "notes": "The execution of these combinations requires attention to defensive posture to ensure the fighter remains protected against counters."
+            },
+            "transcript_reference": "00:00:06:10 - 00:01:31:22",
+            "key_points": [
+                "Combos 6-10 build upon the foundational boxing techniques with more complex patterns for advanced fighters.",
+                "Incorporation of uppercuts introduces verticality in striking, offering new angles of attack.",
+                "Strategic guard manipulation through these combos can open significant opportunities for damage."
+            ]
+        }
+    ]
+}
