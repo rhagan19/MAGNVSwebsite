@@ -3,43 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MMA Techniques Catalog</title>
+    <title>MAGNVS Library</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- Include Select2 CSS for styling the multiselect dropdown -->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet" />
 </head>
 <body>
+
+<div class="table-container">
     <header>
-        <h1>MMA Techniques Catalog</h1>
-        <p>Filter techniques by offense or defense, focus, discipline, and targets.</p>
+        <h1>My Table</h1>
+        <div class="filter-bar">
+            <select class="filter-dropdown multiselect" multiple="multiple" aria-label="Select by Country">
+                <!-- Options will be dynamically populated -->
+            </select>
+            <button class="clear-button">Clear</button>
+            <div class="search-container">
+                <input type="search" id="search" placeholder="Search here...">
+                <button class="sort-button">Sort by</button>
+            </div>
+        </div>
     </header>
-    
-    <main>
-        <div id="filters">
-            <label for="filterOffenseDefense">Offense/Defense:</label>
-            <select id="filterOffenseDefense">
-                <option value="">All</option>
-            </select>
 
-            <label for="filterFocus">Focus:</label>
-            <select id="filterFocus">
-                <option value="">All</option>
-            </select>
+    <table>
+        <!-- Table content -->
+    </table>
+</div>
 
-            <label for="filterDiscipline">Discipline:</label>
-            <select id="filterDiscipline">
-                <option value="">All</option>
-            </select>
-
-            <label for="filterTargets">Targets:</label>
-            <select id="filterTargets">
-                <option value="">All</option>
-            </select>
-        </div>
-        
-        <div id="results">
-            <!-- Filtered results will be displayed here -->
-        </div>
-    </main>
-    
-    <script src="script.js"></script>
+<script src="script.js"></script>
+<!-- Include Select2 JS and jQuery for functionality -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
 </body>
 </html>
