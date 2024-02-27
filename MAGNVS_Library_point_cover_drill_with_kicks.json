@@ -1,0 +1,63 @@
+{
+    "techniques": [
+        {
+            "video_name": "Course 7: Video 5",
+            "course_name": "CSA Striking System",
+            "name": "22 Point Cover Drill with Kicks",
+            "description": "Enhances the 14 point cover drill by incorporating defenses against various types of kicks, expanding the drill into a 22 point cover system. This section focuses on strategies for effectively defending against low line kicks, body kicks, head kicks, and teep kicks, utilizing checks, blocks, and evasive movements.",
+            "offensive": false,
+            "defensive": {
+                "focus": "Defensive",
+                "types": [
+                    "Checking",
+                    "Blocking",
+                    "Evasive Movements"
+                ],
+                "disciplines": [
+                    "Muay Thai"
+                ],
+                "targets": [
+                    "Legs",
+                    "Body",
+                    "Head"
+                ],
+                "strategies": {
+                    "low_kick_defense": "Involves checking the kick by lifting the leg at a 45-degree angle to intercept the kick with the shin.",
+                    "body_kick_defense": "Utilizes forearm and arm to block or absorb the impact of kicks aimed at the body.",
+                    "head_kick_defense": "Employs a combination of arm, forearm, and hand positioning to protect the head and neck from high kicks.",
+                    "teep_kick_defense": "Adopts an elbow cross block to defend against direct teep kicks."
+                },
+                "techniques": [
+                    {
+                        "variation": "Low Kick Check",
+                        "description": "A defensive maneuver to intercept low line kicks by opening the hip and lifting the leg at a 45-degree angle, using the shin to block.",
+                        "timestamp": "00:37:01-00:41:15"
+                    },
+                    {
+                        "variation": "Body Kick Block",
+                        "description": "Blocks mid-level kicks using the forearm and bicep to absorb and disperse the force of the kick while protecting vital areas.",
+                        "timestamp": "00:41:16-00:48:06"
+                    },
+                    {
+                        "variation": "Head Kick Block",
+                        "description": "Defends against high kicks by raising the arms to cover the head and neck, ensuring multiple points of contact to distribute the impact.",
+                        "timestamp": "00:48:07-00:53:00"
+                    },
+                    {
+                        "variation": "Teep Kick Elbow Cross Block",
+                        "description": "A specific block against teep kicks using the elbow to intercept and divert the kick away from the body.",
+                        "timestamp": "00:55:08-00:57:05"
+                    }
+                ]
+            },
+            "transcript_reference": "00:00:06:08 - 00:05:00:15",
+            "key_points": [
+                "Introduces a comprehensive defensive framework against various types of kicks, expanding the original 14 point cover drill.",
+                "Emphasizes the importance of proper body mechanics and positioning for effective kick defense, including the significance of opening the hip and lifting the leg for checks.",
+                "Highlights the use of blocks to defend against body and head kicks, advocating for a multi-point contact approach to efficiently absorb and redistribute force.",
+                "Incorporates specialized defenses like the elbow cross block for teep kicks, demonstrating adaptability to different attacking techniques.",
+                "Encourages creativity and adaptability within the drill, allowing practitioners to tailor defenses based on their style and the specific challenges they face."
+            ]
+        }
+    ]
+}

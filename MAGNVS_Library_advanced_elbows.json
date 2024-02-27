@@ -1,0 +1,77 @@
+{
+    "techniques": [
+        {
+            "video_name": "Course 3: Video 2",
+            "course_name": "CSA Striking System",
+            "name": "Advanced Elbows",
+            "description": "Continuation from the first five basic elbows, this video introduces the next five advanced elbow techniques, showcasing their power, application, and strategic importance in Muay Thai and MMA. Demonstrated by Gaston 'The Dream Killer' Bolanos and Hector 'El Matador' Fajardo, these elbows emphasize precision, power, and versatility.",
+            "offensive": {
+                "focus": "Offensive",
+                "types": [
+                    "Striking"
+                ],
+                "disciplines": [
+                    "Muay Thai",
+                    "MMA"
+                ],
+                "targets": [
+                    "Head",
+                    "Body"
+                ],
+                "strategies": {
+                    "power": "The Tomahawk elbow is highlighted for its power, driving weight and force downwards at an angle for maximum impact.",
+                    "agility": "Spin elbows (both directions) and the Superman elbow offer dynamic, unpredictable attacks that can surprise an opponent and penetrate defenses.",
+                    "precision": "The 12 to 6 elbow, despite its controversy, is discussed for its precise downward force, useful in clinch situations or when an opponent is grounded."
+                },
+                "techniques": [
+                    {
+                        "variation": "Tomahawk Elbow",
+                        "description": "A powerful downward strike using the weight of the body to enhance impact, aimed at breaking through the opponent's guard.",
+                        "timestamp": "00:21:10-00:33:00"
+                    },
+                    {
+                        "variation": "Spin Elbow",
+                        "description": "A rotational attack that utilizes momentum to deliver a devastating elbow strike from either side.",
+                        "timestamp": "00:38:09-00:42:08"
+                    },
+                    {
+                        "variation": "Superman Elbow",
+                        "description": "A dynamic move where the fighter leaps forward, simulating a Superman punch, but instead delivers a powerful elbow strike.",
+                        "timestamp": "00:44:19-00:52:00"
+                    },
+                    {
+                        "variation": "12 to 6 Elbow",
+                        "description": "A vertical elbow strike from overhead down to the target, known for its precision and power, especially in close quarters.",
+                        "timestamp": "00:56:06-01:02:10"
+                    }
+                ]
+            },
+            "defensive": {
+                "focus": "Defensive",
+                "types": [
+                    "Guard Penetration",
+                    "Surprise Attack"
+                ],
+                "disciplines": [
+                    "Muay Thai",
+                    "MMA"
+                ],
+                "targets": [
+                    "Head",
+                    "Body"
+                ],
+                "strategies": {
+                    "avoidance": "Using spin and Superman elbows to create angles and avoid direct counters, keeping the opponent off-balance.",
+                    "counter": "Employing Tomahawk and 12 to 6 elbows as counters to opponents' attacks, using their momentum against them."
+                },
+                "notes": "While the 12 to 6 elbow is controversial due to legal restrictions in some competitions, it remains a valuable technique when applied within the rules."
+            },
+            "transcript_reference": "00:00:06:10 - 00:02:12:06",
+            "key_points": [
+                "The advanced elbow techniques expand on the basic elbow strikes, introducing more dynamic and powerful variations for combat.",
+                "Each elbow technique serves a specific strategic purpose, from delivering powerful blows to creating openings for further attacks.",
+                "Proper form and execution are crucial for maximizing the effectiveness of each elbow strike while minimizing the risk of self-injury."
+            ]
+        }
+    ]
+}

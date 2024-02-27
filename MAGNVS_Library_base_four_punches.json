@@ -1,0 +1,84 @@
+{
+    "techniques": [
+        {
+            "video_name": "Course 1: Video 1",
+            "course_name": "CSA Striking System",
+            "name": "Basic Number System for Strikes",
+            "description": "Introduction to a structured system for learning and teaching strikes, including punches, kicks, elbows, and knees, by assigning them numbers for easy recall and application.",
+            "offensive": {
+                "focus": "Offensive",
+                "types": [
+                    "Punches",
+                    "Kicks",
+                    "Elbows",
+                    "Knees"
+                ],
+                "disciplines": [
+                    "Boxing",
+                    "Muay Thai",
+                    "MMA"
+                ],
+                "targets": [
+                    "Head",
+                    "Body",
+                    "Legs"
+                ],
+                "strategies": {
+                    "establishing": "Facilitates memorization and quick recall during training and combat.",
+                    "faking": "Allows for the integration of feints within combinations.",
+                    "combining": "Enables the creation of fluid combinations using a mix of strikes."
+                },
+                "techniques": [
+                    {
+                        "variation": "Jab",
+                        "description": "A quick, straight punch thrown with the lead hand, foundational for combinations.",
+                        "timestamp": "00:02:10:18-00:02:12:11"
+                    },
+                    {
+                        "variation": "Cross",
+                        "description": "A powerful, straight punch delivered with the rear hand, often follows a jab.",
+                        "timestamp": "00:02:21:20-00:02:23:19"
+                    },
+                    {
+                        "variation": "Left Hook",
+                        "description": "A horizontal punch thrown with the lead hand to the side of the opponent's head or body.",
+                        "timestamp": "00:02:28:02-00:02:29:01"
+                    },
+                    {
+                        "variation": "Right Hook",
+                        "description": "Similar to the left hook but executed with the rear hand for increased power.",
+                        "timestamp": "00:02:30:23-00:02:31:19"
+                    }
+                ]
+            },
+            "defensive": {
+                "focus": "Defensive",
+                "types": [
+                    "Positioning",
+                    "Guarding"
+                ],
+                "disciplines": [
+                    "Boxing",
+                    "Muay Thai",
+                    "MMA"
+                ],
+                "targets": [
+                    "Head",
+                    "Body"
+                ],
+                "strategies": {
+                    "establishing": "Emphasizes the importance of maintaining a high guard and proper stance.",
+                    "faking": "Utilizes movement and guard positioning to bait and counter.",
+                    "combining": "Incorporates head movement and footwork for defensive maneuvers."
+                },
+                "notes": "Stressing the significance of always keeping the non-striking hand in a protective position to guard against counters."
+            },
+            "transcript_reference": "00:00:06:09 - 00:03:53:22",
+            "key_points": [
+                "The system simplifies learning by associating each strike with a specific number.",
+                "Effective for both new learners and experienced practitioners for drill and combination development.",
+                "Promotes quick decision-making in combat situations through familiarization with numbered strikes."
+            ]
+        }
+    ]
+}

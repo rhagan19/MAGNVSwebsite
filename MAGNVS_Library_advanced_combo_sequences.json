@@ -1,0 +1,78 @@
+{
+    "techniques": [
+        {
+            "video_name": "Course 9: Video 4",
+            "course_name": "CSA Striking System",
+            "name": "Advanced Combo Sequences 11-20 with Integrated Muay Thai Techniques",
+            "description": "This video introduces advanced boxing combinations numbered 11 through 20 within the CSA striking system, emphasizing the integration of Muay Thai techniques such as kicks, elbows, and knees. These combinations are designed to enhance the fighter's arsenal by incorporating overhands, rear hooks, and varied strikes to create dynamic and unpredictable attack patterns.",
+            "offensive": {
+                "focus": "Offensive",
+                "types": [
+                    "Boxing Combinations",
+                    "Muay Thai Techniques"
+                ],
+                "disciplines": [
+                    "Boxing",
+                    "Muay Thai"
+                ],
+                "targets": [
+                    "Head",
+                    "Body",
+                    "Legs"
+                ],
+                "strategies": {
+                    "expanding": "Expanding the fighter's striking repertoire with advanced boxing combinations that incorporate Muay Thai techniques for a more versatile offense.",
+                    "sequencing": "Building sequences that start with boxing combinations and end with Muay Thai weapons, allowing for creative and effective striking flows.",
+                    "variability": "Introducing variability in attacks to confuse opponents and create openings for significant strikes."
+                },
+                "techniques": [
+                    {
+                        "variation": "Jab, Cross, Jab with Kick",
+                        "description": "A boxing sequence of jab, cross, jab, followed by a Muay Thai kick (leg, body, or head) to capitalize on the created openings.",
+                        "timestamp": "00:01:23:17-00:01:49:16"
+                    },
+                    {
+                        "variation": "Cross, Jab, Cross with Opposite Kick",
+                        "description": "This combination reverses the traditional jab, cross pattern and includes an opposite leg kick to exploit defensive gaps.",
+                        "timestamp": "00:01:59:16-00:02:03:04"
+                    },
+                    {
+                        "variation": "Jab, Rear Uppercut, Hook with Muay Thai Weapon",
+                        "description": "Incorporates a rear uppercut between the jab and hook, followed by a chosen Muay Thai weapon, enhancing the combo's impact.",
+                        "timestamp": "00:02:03:04-00:02:10:11"
+                    },
+                    {
+                        "variation": "Jab, Cross, Lead Uppercut, Overhand with Kick",
+                        "description": "Combines basic strikes with an overhand punch for a powerful finish, complemented by a Muay Thai kick.",
+                        "timestamp": "00:02:10:11-00:02:49:17"
+                    }
+                ]
+            },
+            "defensive": {
+                "focus": "Defensive",
+                "types": [
+                    "Footwork",
+                    "Guarding"
+                ],
+                "disciplines": [
+                    "Boxing",
+                    "Muay Thai"
+                ],
+                "targets": [
+                    "General"
+                ],
+                "strategies": {
+                    "adaptation": "Adapting defensive techniques to counter the integrated boxing and Muay Thai attacks, focusing on footwork and effective guarding.",
+                    "anticipation": "Developing the ability to anticipate and react to complex strike sequences, enhancing overall defensive capabilities."
+                },
+                "notes": "These combinations not only improve offensive skills but also require the fighter to be defensively sound, as executing and defending against such varied attacks demands high levels of skill and awareness."
+            },
+            "transcript_reference": "00:00:06:09 - 00:03:25:15",
+            "key_points": [
+                "Introduces advanced boxing combinations that are crucial for developing a well-rounded striking strategy, incorporating both boxing and Muay Thai techniques.",
+                "Emphasizes the importance of mastering overhands and rear hooks later in training to ensure a solid foundation in straight punches beforehand.",
+                "Highlights the versatility of these combos, making them applicable across different striking disciplines and suitable for fighters of varying levels."
+            ]
+        }
+    ]
+}

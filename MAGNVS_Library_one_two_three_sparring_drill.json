@@ -1,0 +1,71 @@
+{
+    "techniques": [
+        {
+            "video_name": "Course 11: Video 4",
+            "course_name": "CSA Striking System",
+            "name": "1, 2, 3 Sparring Drill",
+            "description": "A strategic sparring drill designed to enhance combat flow, decision-making, and adaptability in a fight. This drill emphasizes the use of probing attacks to gather data, followed by a committed combination, and finishes with a decisive striking sequence. The drill evolves to include opponent's counter-attacks, requiring the fighter to adjust defensively and offensively in real-time.",
+            "offensive": {
+                "focus": "Strategic Engagement and Adaptability",
+                "types": [
+                    "Probing Attacks",
+                    "Committed Combinations",
+                    "Finishing Strikes"
+                ],
+                "disciplines": [
+                    "Kickboxing",
+                    "Muay Thai",
+                    "MMA"
+                ],
+                "targets": [
+                    "General"
+                ],
+                "strategies": {
+                    "data_collection": "Using initial light attacks (probes) to gauge the opponent's reactions.",
+                    "committed_attacks": "Executing a series of determined attacks based on the opponent's response to the probe.",
+                    "finishing_combinations": "Concluding with a strong series of strikes intended to finish the exchange."
+                },
+                "techniques": [
+                    {
+                        "variation": "Probes",
+                        "description": "Light attacks aimed at gathering information about the opponent's defensive habits.",
+                        "timestamp": "00:01:07:04 - 00:01:10:03"
+                    },
+                    {
+                        "variation": "Committed Attack",
+                        "description": "A determined attack sequence following the probe, tailored to exploit the opponent's observed weaknesses.",
+                        "timestamp": "00:01:32:03 - 00:01:36:05"
+                    },
+                    {
+                        "variation": "Finishing Combination",
+                        "description": "A series of strikes designed to conclude the drill or potentially the fight, taking advantage of the openings created by the initial probe and committed attack.",
+                        "timestamp": "00:01:47:19 - 00:01:51:22"
+                    }
+                ]
+            },
+            "defensive": {
+                "focus": "Reactive Defense and Counter-Striking",
+                "types": [
+                    "Blocks",
+                    "Parries",
+                    "Evasion",
+                    "Checking Kicks"
+                ],
+                "disciplines": [
+                    "Kickboxing",
+                    "Muay Thai",
+                    "MMA"
+                ],
+                "targets": [
+                    "General"
+                ],
+                "strategies": {
+                    "reactive_adaptation": "Adjusting defensive actions based on the opponent's offensive maneuvers during the drill.",
+                    "counter_striking": "Identifying opportunities to counter-attack, especially between the opponent's committed attacks and finishing combinations.",
+                    "defensive_integrity": "Maintaining defensive posture and readiness throughout the offensive phases of the drill."
+                },
+                "notes": "The drill incrementally incorporates the opponent's counter-attacks, encouraging the fighter to remain defensively sound and adaptively offensive."
+            }
+        }
+    ]
+}

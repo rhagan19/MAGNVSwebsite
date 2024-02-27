@@ -1,0 +1,80 @@
+{
+    "techniques": [
+        {
+            "video_name": "Course 1: Video 3",
+            "course_name": "CSA Striking System",
+            "name": "Completing the Basic Punching Number System",
+            "description": "Extends the foundational punching number system, introducing advanced techniques like body shots and overhands, refining the boxer's offensive strategy.",
+            "offensive": {
+                "focus": "Offensive",
+                "types": [
+                    "Body Shots",
+                    "Overhands"
+                ],
+                "disciplines": [
+                    "Boxing",
+                    "MMA"
+                ],
+                "targets": [
+                    "Body",
+                    "Head"
+                ],
+                "strategies": {
+                    "establishing": "Aiming body shots to weaken the opponent's guard and create head openings.",
+                    "faking": "Using level changes and body shots as feints for overhand setups.",
+                    "combining": "Linking body shots with overhands for potent combinations."
+                },
+                "techniques": [
+                    {
+                        "variation": "Jab to the Body",
+                        "description": "A precision strike aimed at the body to lower the opponent's guard, executed with a level change.",
+                        "timestamp": "00:25:04-00:26:09"
+                    },
+                    {
+                        "variation": "Cross to the Body",
+                        "description": "A powerful strike targeting the body, also requiring a level change to maintain defensive cover.",
+                        "timestamp": "00:26:10-00:27:15"
+                    },
+                    {
+                        "variation": "Left Overhand",
+                        "description": "An arcing punch over the opponent's guard, targeting the head with the potential to cause significant damage.",
+                        "timestamp": "00:30:10-00:32:14"
+                    },
+                    {
+                        "variation": "Right Overhand",
+                        "description": "Similar to the left overhand but thrown with the right hand, it is common in MMA for its knockout potential.",
+                        "timestamp": "00:32:15-00:33:14"
+                    }
+                ]
+            },
+            "defensive": {
+                "focus": "Defensive",
+                "types": [
+                    "Guarding",
+                    "Evasion"
+                ],
+                "disciplines": [
+                    "Boxing",
+                    "MMA"
+                ],
+                "targets": [
+                    "Head",
+                    "Body"
+                ],
+                "strategies": {
+                    "establishing": "Maintaining a high guard and proper stance to defend against body shots and overhands.",
+                    "faking": "Utilizing movement to evade or counter body shots and overhands.",
+                    "combining": "Incorporating counterattacks following a successful defense against body shots and overhands."
+                },
+                "notes": "Emphasizes the importance of level changing for body shots to minimize exposure to counter strikes and the need for tight execution of overhands to avoid leaving openings."
+            },
+            "transcript_reference": "00:00:06:12 - 00:02:45:04",
+            "key_points": [
+                "The extension of the punching number system to include body shots and overhands, enriching the boxer's arsenal.",
+                "The critical technique of level changing for body shots to reduce risk while attacking.",
+                "The strategic application of overhands, thrown with precision and power, to penetrate the opponent's defenses.",
+                "Defensive tactics to safeguard against these advanced offensive maneuvers, ensuring balanced combat skills."
+            ]
+        }
+    ]
+}

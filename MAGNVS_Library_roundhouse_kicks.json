@@ -1,0 +1,83 @@
+{
+    "techniques": [
+        {
+            "video_name": "Course 2: Video 1",
+            "course_name": "CSA Striking System",
+            "name": "Basic Numbers for Roundhouse Kicks",
+            "description": "Introduction to the roundhouse kick numbering system in the CSA striking system, focusing on different targets for kicks and emphasizing the importance of angles, head movement, and safety.",
+            "offensive": {
+                "focus": "Offensive",
+                "types": [
+                    "Roundhouse Kicks"
+                ],
+                "disciplines": [
+                    "Muay Thai",
+                    "MMA",
+                    "Kickboxing"
+                ],
+                "targets": [
+                    "Calf",
+                    "Inside Leg",
+                    "Outside Leg",
+                    "Back Leg"
+                ],
+                "strategies": {
+                    "establishing": "Utilizing angles and positioning to safely execute kicks while maintaining defense.",
+                    "faking": "Incorporating feints and missed strikes to set up roundhouse kicks.",
+                    "combining": "Combining kicks with punches and other strikes to create effective combinations."
+                },
+                "techniques": [
+                    {
+                        "variation": "Calf Kick",
+                        "description": "A low kick aimed at the opponent's calf, effective for impairing movement and causing damage over time.",
+                        "timestamp": "00:41:09-00:51:07"
+                    },
+                    {
+                        "variation": "Inside Leg Kick",
+                        "description": "A kick targeting the inside of the opponent's leg, useful for destabilizing and setting up further strikes.",
+                        "timestamp": "00:44:08-00:46:10"
+                    },
+                    {
+                        "variation": "Outside Leg Kick",
+                        "description": "A kick aimed at the outside of the opponent's leg, often used to damage the leg muscles and hinder mobility.",
+                        "timestamp": "00:48:22-00:51:12"
+                    },
+                    {
+                        "variation": "Back Leg Kick",
+                        "description": "A powerful kick targeting the opponent's back leg, less common but highly effective when landed.",
+                        "timestamp": "00:51:13-00:53:17"
+                    }
+                ]
+            },
+            "defensive": {
+                "focus": "Defensive",
+                "types": [
+                    "Positioning",
+                    "Evasion"
+                ],
+                "disciplines": [
+                    "Muay Thai",
+                    "MMA",
+                    "Kickboxing"
+                ],
+                "targets": [
+                    "Legs",
+                    "Body"
+                ],
+                "strategies": {
+                    "establishing": "Adopting a stance that allows for quick defensive movements and counterattacks.",
+                    "faking": "Using head movement and footwork to evade kicks and create openings for counters.",
+                    "combining": "Blending defensive maneuvers with offensive strategies to maintain control of the fight."
+                },
+                "notes": "Emphasizes the critical role of head movement and getting off the center line to minimize the risk of counter-strikes."
+            },
+            "transcript_reference": "00:00:06:11 - 00:03:59:07",
+            "key_points": [
+                "Introduction to a structured system for learning and executing roundhouse kicks targeting various areas.",
+                "The significance of angle and positioning in safely delivering powerful kicks.",
+                "The importance of head movement and defensive positioning to avoid being countered.",
+                "Techniques for effectively targeting the calf, inside leg, outside leg, and back leg with roundhouse kicks."
+            ]
+        }
+    ]
+}

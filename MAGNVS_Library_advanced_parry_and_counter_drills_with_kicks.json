@@ -1,0 +1,80 @@
+{
+    "techniques": [
+        {
+            "video_name": "Course 8: Video 2",
+            "course_name": "CSA Striking System",
+            "name": "Advanced Parry and Counter Drills with Kicks",
+            "description": "Elevates the parry counter drills by incorporating kicks, offering a blend of defensive maneuvers and offensive strikes to form a comprehensive combat strategy.",
+            "offensive": {
+                "focus": "Offensive",
+                "types": [
+                    "Kicks"
+                ],
+                "disciplines": [
+                    "Muay Thai",
+                    "MMA"
+                ],
+                "targets": [
+                    "Leg",
+                    "Body",
+                    "Head"
+                ],
+                "strategies": {
+                    "establishing": "Using parried punches as openings for counter kicks, exploiting the opponent's temporary vulnerabilities.",
+                    "faking": "Feinting with punches to set up powerful kicks, misleading the opponent about the intended target area.",
+                    "combining": "Seamlessly integrating punches and kicks into fluid combinations to overwhelm the opponent."
+                },
+                "techniques": [
+                    {
+                        "variation": "Jab Parry to Right Kick",
+                        "description": "Counters a parried jab with a swift right kick, targeting the opponent's leg, body, or head based on their exposed defense.",
+                        "timestamp": "00:50:14-00:53:06"
+                    },
+                    {
+                        "variation": "Cross Parry to Left Kick",
+                        "description": "Utilizes a parried cross to launch a left kick, aiming for the most vulnerable target area presented by the opponent.",
+                        "timestamp": "00:53:07-00:58:02"
+                    },
+                    {
+                        "variation": "Hook Parry to Right Body Kick",
+                        "description": "Following a parried hook, executes a right body kick with emphasis on targeting the liver for maximum impact.",
+                        "timestamp": "00:58:03-01:02:14"
+                    },
+                    {
+                        "variation": "Overhand Parry to Left High Kick",
+                        "description": "Capitalizes on a parried overhand punch to deliver a left high kick, aiming for the head to exploit the opponent's lowered guard.",
+                        "timestamp": "01:02:15-01:05:20"
+                    }
+                ]
+            },
+            "defensive": {
+                "focus": "Defensive",
+                "types": [
+                    "Parrying",
+                    "Positioning"
+                ],
+                "disciplines": [
+                    "Muay Thai",
+                    "MMA"
+                ],
+                "targets": [
+                    "Incoming Strikes"
+                ],
+                "strategies": {
+                    "maintaining": "Staying within parry range to effectively neutralize incoming punches and set up counter-attacks.",
+                    "maneuvering": "Adjusting footwork and body positioning to maintain optimal distance for executing parries and launching counters.",
+                    "anticipating": "Reading the opponent's movements to anticipate strikes and prepare effective parry and counter techniques."
+                },
+                "notes": "Highlights the importance of mastering parry timing and counterattack precision to turn defensive actions into offensive opportunities."
+            },
+            "transcript_reference": "00:00:06:08 - 00:03:09:16",
+            "key_points": [
+                "Introduction of advanced kick counters in response to parried punches, enhancing the fighter's offensive capabilities.",
+                "Emphasis on strategic targeting with kicks, choosing between leg, body, or head based on the situation.",
+                "The role of feints and combination attacks in creating openings for counter kicks.",
+                "Defensive skills focusing on parrying and positioning to effectively manage distance and set up counters.",
+                "The adaptability of the drill to accommodate different martial arts disciplines, including Muay Thai and MMA."
+            ]
+        }
+    ]
+}
