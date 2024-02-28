@@ -8,11 +8,15 @@ document.addEventListener('DOMContentLoaded', function () {
             return response.json();
         })
         .then(data => {
-            // Populate dropdowns
-            populateDropdown('type-select', data.types);
-            populateDropdown('discipline-select', data.disciplines);
-            populateDropdown('target-select', data.targets);
-            populateDropdown('technique-select', data.techniques);
+            // Populate dropdowns if data exists
+            if (data && data.types && data.disciplines && data.targets && data.techniques) {
+                populateDropdown('type-select', data.types);
+                populateDropdown('discipline-select', data.disciplines);
+                populateDropdown('target-select', data.targets);
+                populateDropdown('technique-select', data.techniques);
+            } else {
+                console.error('Error: Data is missing or incomplete.');
+            }
         })
         .catch(error => {
             console.error('Error fetching data:', error);
