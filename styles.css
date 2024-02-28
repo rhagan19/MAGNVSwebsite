@@ -28,11 +28,18 @@ header {
     background-color: #eee;
 }
 
-.filter-dropdown, .search-container input, .clear-button, .sort-button {
-    border-radius: 20px;
+.filter-dropdown {
+    display: block;
+    width: 100%;
+    min-width: 250px;
+    max-width: 500px;
     padding: 10px;
     border: 1px solid #ccc;
+    border-radius: 20px;
     margin-right: 10px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }
 
 .search-container {
