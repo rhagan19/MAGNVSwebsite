@@ -1,53 +1,38 @@
-document.addEventListener('DOMContentLoaded', function () {
-    // Initialize Select2 for multiselect dropdown
-    $('.multiselect').select2({
+$(document).ready(function() {
+    // Initialize Select2 on the filter-dropdown element
+    $('.filter-dropdown').select2({
         placeholder: "Select options",
-        allowClear: true
+        allowClear: true,
+        width: 'resolve' // This will help to make the dropdown wider
     });
 
-    // Fetching data.json and initializing filters dynamically
-    fetch('data.json')
-    .then(response => response.json())
-    .then(data => {
-        // Assuming data is structured appropriately
-        // Initialize your filters here based on the data
-        // For example, populate a 'category' filter
-        populateFilterOptions('category-filter', data.categories);
-        
-        // More filter initializations can follow...
-    })
-    .catch(error => console.error('Error fetching data:', error));
-
-    // Function to populate filter options
-    function populateFilterOptions(filterElementId, options) {
-        const filterElement = document.getElementById(filterElementId);
-        options.forEach(option => {
-            const optionElement = document.createElement('option');
-            optionElement.value = option.value;
-            optionElement.textContent = option.label;
-            filterElement.appendChild(optionElement);
+    // Fetch data from data.json and populate the filter dropdown
+    $.getJSON('data.json', function(data) {
+        // Assuming data.json contains an array of objects with a country property
+        data.forEach(function(item) {
+            // Append each country as an option in the filter-dropdown
+            $('.filter-dropdown').append(new Option(item.country, item.country));
         });
 
-        // Re-initialize Select2 for the updated filter
-        $(`#${filterElementId}`).select2({
-            placeholder: "Select options",
-            allowClear: true
-        });
-    }
-
-    // Event listeners for filter changes to dynamically update other filters can go here...
-    // Example: On 'category' filter change, update 'sub-category' filter
-    document.getElementById('category-filter').addEventListener('change', function () {
-        const selectedCategory = this.value;
-        // Fetch or filter sub-category options based on selectedCategory
-        // Update 'sub-category' filter accordingly
-        // populateFilterOptions('sub-category-filter', filteredSubCategories);
+        // Update Select2 with new options
+        $('.filter-dropdown').trigger('change');
     });
 
-    // Example: Clear button functionality
-    document.querySelector('.clear-button').addEventListener('click', function () {
-        $('.multiselect').val(null).trigger('change');
+    // Event listener for the Clear button
+    $('.clear-button').on('click', function() {
+        // Clear selected options
+        $('.filter-dropdown').val(null).trigger('change');
     });
 
-    // Search functionality can be implemented here...
+    // Event listener for the Sort button (placeholder for sort functionality)
+    $('.sort-button').on('click', function() {
+        // You would add your sorting logic here
+        console.log('Sort button clicked');
+    });
+
+    // Event listener for the search input (placeholder for search functionality)
+    $('#search').on('input', function() {
+        // You would add your search logic here
+        console.log('Search:', $(this).val());
+    });
 });
