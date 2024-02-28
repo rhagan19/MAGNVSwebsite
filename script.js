@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
             // Extracting defensive strategies from the data
             const defensiveStrategies = data.map(item => item.defensive).filter(defensive => defensive);
+            console.log('Defensive strategies:', defensiveStrategies);
             // Populate the dropdown options for each filter category
             populateDropdown('focus-select', defensiveStrategies.map(defensive => defensive.focus));
             populateDropdown('type-select', [].concat(...defensiveStrategies.map(defensive => defensive.types)));
