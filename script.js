@@ -8,15 +8,20 @@ document.addEventListener('DOMContentLoaded', function () {
             return response.json();
         })
         .then(data => {
-            // Populate dropdowns if data exists
-            if (data && data.types && data.disciplines && data.targets && data.techniques) {
-                populateDropdown('type-select', data.types);
-                populateDropdown('discipline-select', data.disciplines);
-                populateDropdown('target-select', data.targets);
-                populateDropdown('technique-select', data.techniques);
-            } else {
-                console.error('Error: Data is missing or incomplete.');
+            if (!data) {
+                console.error('Error: No data received from the server.');
+                return;
             }
+            // Check if data is an object
+            if (typeof data !== 'object' || data === null) {
+                console.error('Error: Data is not an object.');
+                return;
+            }
+            // Populate dropdowns
+            populateDropdown('type-select', data.types);
+            populateDropdown('discipline-select', data.disciplines);
+            populateDropdown('target-select', data.targets);
+            populateDropdown('technique-select', data.techniques);
         })
         .catch(error => {
             console.error('Error fetching data:', error);
@@ -31,12 +36,14 @@ document.addEventListener('DOMContentLoaded', function () {
         defaultOption.text = 'Select';
         defaultOption.value = '';
         dropdown.appendChild(defaultOption);
-        options.forEach(option => {
-            const newOption = document.createElement('option');
-            newOption.text = option;
-            newOption.value = option;
-            dropdown.appendChild(newOption);
-        });
+        if (options && Array.isArray(options)) {
+            options.forEach(option => {
+                const newOption = document.createElement('option');
+                newOption.text = option;
+                newOption.value = option;
+                dropdown.appendChild(newOption);
+            });
+        }
     }
 
     // Event listeners for other interactive elements can go here...
