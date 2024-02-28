@@ -8,12 +8,14 @@ document.addEventListener('DOMContentLoaded', function () {
             return response.json();
         })
         .then(data => {
-            // Populate dropdowns
-            populateDropdown('strategy-select', Object.keys(data.strategies));
-            populateDropdown('type-select', data.types);
-            populateDropdown('discipline-select', data.disciplines);
-            populateDropdown('target-select', data.targets);
-            populateDropdown('technique-select', data.techniques);
+            // Check if data.strategies exists
+            if (data.strategies) {
+                // Populate dropdowns
+                populateDropdown('strategy-select', Object.keys(data.strategies));
+            } else {
+                console.error('Error: data.strategies is null or undefined.');
+            }
+            // Populate other dropdowns if needed
         })
         .catch(error => {
             console.error('Error fetching data:', error);
