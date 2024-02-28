@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
             return response.json();
         })
         .then(data => {
-            // Populate other dropdowns as needed
+            // Populate dropdowns
             populateDropdown('type-select', data.types);
             populateDropdown('discipline-select', data.disciplines);
             populateDropdown('target-select', data.targets);
