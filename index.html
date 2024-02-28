@@ -14,10 +14,22 @@
     <header>
         <h1>The MAGNVS Library</h1>
         <div class="filter-bar">
-            <select id="filter-offensive" class="filter-dropdown multiselect" multiple="multiple" aria-label="Select Offensive/Defensive">
-                <!-- Options will be dynamically populated -->
+            <!-- Dropdown for selecting Offensive/Defensive -->
+            <select id="strategy-dropdown" class="filter-dropdown">
+                <option value="">Select Strategy</option>
+                <option value="offensive">Offensive</option>
+                <option value="defensive">Defensive</option>
             </select>
+
+            <!-- Dynamic secondary filter dropdown will be populated based on the strategy -->
+            <select id="secondary-filter" class="filter-dropdown" style="display: none;">
+                <!-- Options will be added dynamically -->
+            </select>
+
+            <!-- Additional dropdowns would go here, hidden initially and shown based on the previous selections -->
+
             <button class="clear-button">Clear</button>
+
             <div class="search-container">
                 <input type="search" id="search" placeholder="Search here...">
                 <button class="sort-button">Sort by</button>
@@ -26,7 +38,7 @@
     </header>
 
     <table>
-        <!-- Table content -->
+        <!-- Table content will be dynamically populated based on filter selections -->
     </table>
 </div>
 
