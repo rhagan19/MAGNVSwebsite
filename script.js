@@ -1,10 +1,15 @@
 document.addEventListener('DOMContentLoaded', function () {
     // Fetch JSON data
-    fetch('https://raw.githubusercontent.com/rhagan19/MAGNVSwebsite/main/data.json')
-        .then(response => response.json())
+    fetch('https://raw.githubusercontent.com/rhagan19/MAGNVSwebsite/main/data.json?token=GHSAT0AAAAAACOYZJTLKH2ENSVALRQ5VDLQZO6SLZQ')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Error fetching data: ' + response.statusText);
+            }
+            return response.json();
+        })
         .then(data => {
             // Populate dropdowns
-            populateDropdown('strategy-select', data.strategies);
+            populateDropdown('strategy-select', Object.keys(data.strategies));
             populateDropdown('type-select', data.types);
             populateDropdown('discipline-select', data.disciplines);
             populateDropdown('target-select', data.targets);
