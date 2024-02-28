@@ -13,12 +13,26 @@
 <div id="library-container">
     <h1>The MAGNVS Library</h1>
     <div id="filters">
-        <select id="strategy-select" class="filter-dropdown" data-filter-category="strategy">
-            <option value="">Select Strategy</option>
+        <select id="focus-select" class="filter-dropdown multiselect" multiple="multiple">
+            <!-- Options will be dynamically populated -->
         </select>
-        <select id="type-select" class="filter-dropdown" data-filter-category="type" style="display:none;"></select>
-        <select id="position-select" class="filter-dropdown" data-filter-category="position" style="display:none;"></select>
-        <!-- Add more dropdowns as needed -->
+        <select id="type-select" class="filter-dropdown multiselect" multiple="multiple">
+            <!-- Options will be dynamically populated -->
+        </select>
+        <select id="discipline-select" class="filter-dropdown multiselect" multiple="multiple">
+            <!-- Options will be dynamically populated -->
+        </select>
+        <select id="target-select" class="filter-dropdown multiselect" multiple="multiple">
+            <!-- Options will be dynamically populated -->
+        </select>
+        <select id="strategy-select" class="filter-dropdown multiselect" multiple="multiple">
+            <!-- Options will be dynamically populated -->
+        </select>
+        <select id="technique-select" class="filter-dropdown multiselect" multiple="multiple">
+            <!-- Options will be dynamically populated -->
+        </select>
+
+        <button id="clear-button">Clear</button>
     </div>
 
     <div id="search-area">
