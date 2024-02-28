@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
     fetch('data.json')
         .then(response => response.json())
         .then(data => {
+            console.log(data); // Log the fetched data to check its structure
             // Populate the dropdown options for each filter category
             populateDropdown('focus-select', data.focus);
             populateDropdown('type-select', data.types);
@@ -10,29 +11,17 @@ document.addEventListener('DOMContentLoaded', function () {
             populateDropdown('target-select', data.targets);
             populateDropdown('strategy-select', data.strategies);
             populateDropdown('technique-select', data.techniques);
+        })
+        .catch(error => console.error('Error fetching data:', error)); // Log any errors that occur during fetch
+
+    // Function to populate dropdown options
+    function populateDropdown(selectId, options) {
+        const select = document.getElementById(selectId);
+        options.forEach(option => {
+            const optionElement = document.createElement('option');
+            optionElement.value = option;
+            optionElement.textContent = option;
+            select.appendChild(optionElement);
         });
-
-    // Initialize Select2 for multiselect dropdown
-    $('.multiselect').select2({
-        placeholder: "Select options",
-        allowClear: true
-    });
-
-    // Event listener for clear button
-    document.getElementById('clear-button').addEventListener('click', function () {
-        $('.multiselect').val(null).trigger('change');
-    });
-
-    // Search functionality can be implemented here...
+    }
 });
-
-// Function to populate dropdown options
-function populateDropdown(id, options) {
-    var select = document.getElementById(id);
-    options.forEach(option => {
-        var optionElement = document.createElement('option');
-        optionElement.value = option;
-        optionElement.textContent = option;
-        select.appendChild(optionElement);
-    });
-}
