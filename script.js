@@ -1,38 +1,30 @@
 $(document).ready(function() {
-    // Initialize Select2 on the filter-dropdown element
-    $('.filter-dropdown').select2({
-        placeholder: "Select options",
-        allowClear: true,
-        width: 'resolve' // This will help to make the dropdown wider
-    });
+    // Initialize Select2 on the filter-dropdown elements
+    $('.filter-dropdown').select2();
 
-    // Fetch data from data.json and populate the filter dropdown
-    $.getJSON('data.json', function(data) {
-        // Assuming data.json contains an array of objects with a country property
-        data.forEach(function(item) {
-            // Append each country as an option in the filter-dropdown
-            $('.filter-dropdown').append(new Option(item.country, item.country));
+    // Fetch data from data.json and populate the secondary filter based on the strategy
+    $('#strategy-dropdown').on('change', function() {
+        var strategy = $(this).val();
+        // Clear the secondary filter before adding new options
+        $('#secondary-filter').empty().append(new Option("Select Filter", ""));
+        $.getJSON('data.json', function(data) {
+            // Filter data based on the strategy
+            var filteredData = data.filter(function(item) {
+                return item.strategy === strategy;
+            });
+            // Populate the secondary filter
+            filteredData.forEach(function(item) {
+                $('#secondary-filter').append(new Option(item.filterName, item.filterValue));
+            });
+            // Update Select2 with new options
+            $('#secondary-filter').trigger('change');
         });
-
-        // Update Select2 with new options
-        $('.filter-dropdown').trigger('change');
     });
 
     // Event listener for the Clear button
     $('.clear-button').on('click', function() {
-        // Clear selected options
         $('.filter-dropdown').val(null).trigger('change');
     });
 
-    // Event listener for the Sort button (placeholder for sort functionality)
-    $('.sort-button').on('click', function() {
-        // You would add your sorting logic here
-        console.log('Sort button clicked');
-    });
-
-    // Event listener for the search input (placeholder for search functionality)
-    $('#search').on('input', function() {
-        // You would add your search logic here
-        console.log('Search:', $(this).val());
-    });
+    // Add additional event listeners and functionality as needed...
 });
