@@ -5,34 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The MAGNVS Library</title>
     <link rel="stylesheet" href="styles.css">
-    <!-- Include Select2 CSS for styling the multiselect dropdown -->
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet" />
 </head>
 <body>
 
 <div id="library-container">
     <h1>The MAGNVS Library</h1>
     <div id="filters">
-        <select id="focus-select" class="filter-dropdown multiselect" multiple="multiple">
-            <!-- Options will be dynamically populated -->
-        </select>
-        <select id="type-select" class="filter-dropdown multiselect" multiple="multiple">
-            <!-- Options will be dynamically populated -->
-        </select>
-        <select id="discipline-select" class="filter-dropdown multiselect" multiple="multiple">
-            <!-- Options will be dynamically populated -->
-        </select>
-        <select id="target-select" class="filter-dropdown multiselect" multiple="multiple">
-            <!-- Options will be dynamically populated -->
-        </select>
-        <select id="strategy-select" class="filter-dropdown multiselect" multiple="multiple">
-            <!-- Options will be dynamically populated -->
-        </select>
-        <select id="technique-select" class="filter-dropdown multiselect" multiple="multiple">
-            <!-- Options will be dynamically populated -->
+        <select id="focus-select">
+            <option value="">Select Focus</option>
         </select>
 
-        <button id="clear-button">Clear</button>
+        <select id="type-select">
+            <option value="">Select Type</option>
+        </select>
+
+        <select id="discipline-select">
+            <option value="">Select Discipline</option>
+        </select>
+
+        <select id="target-select">
+            <option value="">Select Target</option>
+        </select>
+
+        <select id="strategy-select">
+            <option value="">Select Strategy</option>
+        </select>
+
+        <select id="technique-select">
+            <option value="">Select Technique</option>
+        </select>
     </div>
 
     <div id="search-area">
@@ -44,8 +45,5 @@
 </div>
 
 <script src="script.js"></script>
-<!-- Include Select2 JS and jQuery for functionality -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
 </body>
 </html>
