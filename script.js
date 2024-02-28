@@ -10,22 +10,27 @@ document.addEventListener('DOMContentLoaded', function () {
             return response.json();
         })
         .then(data => {
-            console.log('Data fetched:', data); // Log the fetched data to check its structure
+            console.log('Data fetched successfully:', data);
+            // Check if the data is in the expected format
+            if (!data || !Array.isArray(data)) {
+                throw new Error('Invalid data format');
+            }
+            // Extracting defensive strategies from the data
+            const defensiveStrategies = data.map(item => item.defensive).filter(defensive => defensive);
             // Populate the dropdown options for each filter category
-            populateDropdown('focus-select', data.focus);
-            populateDropdown('type-select', data.types);
-            populateDropdown('discipline-select', data.disciplines);
-            populateDropdown('target-select', data.targets);
-            populateDropdown('strategy-select', data.strategies);
-            populateDropdown('technique-select', data.techniques);
+            populateDropdown('focus-select', defensiveStrategies.map(defensive => defensive.focus));
+            populateDropdown('type-select', [].concat(...defensiveStrategies.map(defensive => defensive.types)));
+            populateDropdown('discipline-select', [].concat(...defensiveStrategies.map(defensive => defensive.disciplines)));
+            populateDropdown('target-select', [].concat(...defensiveStrategies.map(defensive => defensive.targets)));
+            populateDropdown('strategy-select', [].concat(...defensiveStrategies.map(defensive => Object.keys(defensive.strategies))));
+            populateDropdown('technique-select', [].concat(...[].concat(...defensiveStrategies.map(defensive => Object.values(defensive.strategies).map(Object.keys)))));
         })
         .catch(error => {
-            console.error('Error fetching data:', error); // Log any errors that occur during fetch
+            console.error('Error fetching or processing data:', error);
         });
 
     // Function to populate dropdown options
     function populateDropdown(selectId, options) {
-        console.log('Populating dropdown', selectId, 'with options:', options);
         const select = document.getElementById(selectId);
         options.forEach(option => {
             const optionElement = document.createElement('option');
