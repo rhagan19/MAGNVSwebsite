@@ -1,43 +1,34 @@
 document.addEventListener('DOMContentLoaded', function () {
-    console.log('Script loaded');
-
-    // Fetch the data from the JSON file
+    // Fetch the JSON data
     fetch('data.json')
         .then(response => {
             if (!response.ok) {
-                throw new Error('Network response was not ok');
+                throw new Error('Failed to fetch JSON data');
             }
             return response.json();
         })
         .then(data => {
-            console.log('Data fetched successfully:', data);
-            // Check if the data is in the expected format
-            if (!data || !Array.isArray(data)) {
-                throw new Error('Invalid data format');
-            }
-            // Extracting defensive strategies from the data
-            const defensiveStrategies = data.map(item => item.defensive).filter(defensive => defensive);
-            console.log('Defensive strategies:', defensiveStrategies);
-            // Populate the dropdown options for each filter category
-            populateDropdown('focus-select', defensiveStrategies.map(defensive => defensive.focus));
-            populateDropdown('type-select', [].concat(...defensiveStrategies.map(defensive => defensive.types)));
-            populateDropdown('discipline-select', [].concat(...defensiveStrategies.map(defensive => defensive.disciplines)));
-            populateDropdown('target-select', [].concat(...defensiveStrategies.map(defensive => defensive.targets)));
-            populateDropdown('strategy-select', [].concat(...defensiveStrategies.map(defensive => Object.keys(defensive.strategies))));
-            populateDropdown('technique-select', [].concat(...[].concat(...defensiveStrategies.map(defensive => Object.values(defensive.strategies).map(Object.keys)))));
+            // Process the JSON data and populate the filters
+            populateFilters(data);
         })
         .catch(error => {
-            console.error('Error fetching or processing data:', error);
+            console.error('Error fetching JSON data:', error);
         });
 
-    // Function to populate dropdown options
-    function populateDropdown(selectId, options) {
-        const select = document.getElementById(selectId);
-        options.forEach(option => {
-            const optionElement = document.createElement('option');
-            optionElement.value = option;
-            optionElement.textContent = option;
-            select.appendChild(optionElement);
-        });
+    // Function to populate the filters
+    function populateFilters(data) {
+        // Example: Populate the strategy filter
+        const strategySelect = document.getElementById('strategy-select');
+        if (strategySelect) {
+            strategySelect.innerHTML = '<option value="">Select Strategy</option>';
+            // Assuming 'strategies' is an array in your JSON data
+            data.strategies.forEach(strategy => {
+                strategySelect.innerHTML += `<option value="${strategy}">${strategy}</option>`;
+            });
+        }
+
+        // Similar logic for other filters...
     }
+
+    // Event listeners and other functionalities can be added here
 });
