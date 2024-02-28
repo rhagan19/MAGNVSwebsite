@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', function () {
             return response.json();
         })
         .then(data => {
-            console.log('Fetched data:', data); // Debugging: Print fetched data to console
             // Populate dropdowns
             populateDropdown('strategy-select', Object.keys(data.strategies));
             populateDropdown('type-select', data.types);
@@ -16,7 +15,10 @@ document.addEventListener('DOMContentLoaded', function () {
             populateDropdown('target-select', data.targets);
             populateDropdown('technique-select', data.techniques);
         })
-        .catch(error => console.error('Error fetching data:', error));
+        .catch(error => {
+            console.error('Error fetching data:', error);
+            // Additional error handling if needed
+        });
 
     // Function to populate dropdown
     function populateDropdown(dropdownId, options) {
