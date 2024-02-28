@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
             return response.json();
         })
         .then(data => {
+            console.log('Fetched data:', data); // Debugging: Print fetched data to console
             // Populate dropdowns
             populateDropdown('strategy-select', Object.keys(data.strategies));
             populateDropdown('type-select', data.types);
