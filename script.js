@@ -6,93 +6,77 @@ document.addEventListener('DOMContentLoaded', function () {
         .then(response => response.json())
         .then(data => {
             allVideos = data.videos;
-            populateDropdowns(allVideos);
+            populateDropdown('focus-select', getUniqueValues(allVideos, 'focus'));
+            // The other dropdowns will be populated dynamically based on the 'focus' selection
         })
         .catch(error => console.error('Error fetching data:', error));
 
-    function populateDropdowns(videos) {
-        populateDropdown('focus-select', getUniqueValues(videos, 'focus'));
-        populateDropdown('type-select', getUniqueValues(videos, 'types'));
-        populateDropdown('discipline-select', getUniqueValues(videos, 'disciplines'));
-        populateDropdown('target-select', getUniqueValues(videos, 'targets'));
-    }
-
+    // Populates dropdown options
     function populateDropdown(dropdownId, options) {
         const dropdown = document.getElementById(dropdownId);
-        dropdown.innerHTML = ''; // Clear existing options
-        const defaultOption = document.createElement('option');
-        defaultOption.text = 'Select';
-        defaultOption.value = '';
-        dropdown.appendChild(defaultOption);
-        options.forEach(option => {
-            const newOption = document.createElement('option');
-            newOption.text = option;
-            newOption.value = option;
-            dropdown.appendChild(newOption);
-        });
+        dropdown.innerHTML = options.map(option => `<option value="${option}">${option}</option>`).join('');
+        dropdown.insertAdjacentHTML('afterbegin', '<option value="">Select</option>');
     }
 
+    // Gets unique values for dropdowns
     function getUniqueValues(array, key) {
-        const unique = new Set();
-        array.forEach(item => {
-            if (Array.isArray(item[key])) {
-                item[key].forEach(subItem => unique.add(subItem));
-            } else {
-                unique.add(item[key]);
-            }
-        });
-        return [...unique];
+        return [...new Set(array.map(item => item[key]))].sort();
     }
 
-    // Filter function
-    document.getElementById('search-btn').addEventListener('click', () => {
-        const focusValue = document.getElementById('focus-select').value;
-        const typeValue = document.getElementById('type-select').value;
-        const disciplineValue = document.getElementById('discipline-select').value;
-        const targetValue = document.getElementById('target-select').value;
-
-        const filteredVideos = allVideos.filter(video => {
-            return (!focusValue || video.focus === focusValue) &&
-                   (!typeValue || video.types.includes(typeValue)) &&
-                   (!disciplineValue || video.disciplines.includes(disciplineValue)) &&
-                   (!targetValue || video.targets.includes(targetValue));
-        });
-
-        displayResults(filteredVideos);
+    // Event listeners for dropdowns
+    document.getElementById('focus-select').addEventListener('change', function () {
+        toggleDropdown('type-select', this.value);
+        if (this.value) {
+            let filteredTypes = allVideos.filter(video => video.focus === this.value).map(video => video.type);
+            populateDropdown('type-select', getUniqueValues(filteredTypes, 'type'));
+        }
     });
 
-    function displayResults(videos) {
-        const tableBody = document.getElementById('results-table').querySelector('tbody');
-        tableBody.innerHTML = ''; // Clear previous results
+    document.getElementById('type-select').addEventListener('change', function () {
+        toggleDropdown('discipline-select', this.value);
+        if (this.value) {
+            let filteredDisciplines = allVideos.filter(video => video.type === this.value).map(video => video.discipline);
+            populateDropdown('discipline-select', getUniqueValues(filteredDisciplines, 'discipline'));
+        }
+    });
 
-        videos.forEach((video, index) => {
-            const row = document.createElement('tr');
-            row.innerHTML = `
-                <td><button class="select-button" onclick="showProfile(${index})">Select</button></td>
-                <td>${video.course_name}</td>
-                <td>${video.video_name}</td>
-                <td>${video.strategies.join(', ')}</td>
-                <td>${video.techniques.map(t => t.variation).join(', ')}</td>
-            `;
-            tableBody.appendChild(row);
-        });
+    document.getElementById('discipline-select').addEventListener('change', function () {
+        let targetSelect = document.getElementById('target-select');
+        targetSelect.style.display = this.value ? 'inline-block' : 'none';
+        // Assume that the JSON structure includes a 'target' field to filter on
+        if (this.value) {
+            let filteredTargets = allVideos.filter(video => video.discipline === this.value).map(video => video.target);
+            populateDropdown('target-select', getUniqueValues(filteredTargets, 'target'));
+        }
+    });
+
+    // Search button event listener
+    document.getElementById('search-btn').addEventListener('click', filterVideos);
+
+    // Reset button event listener
+    document.getElementById('reset-btn').addEventListener('click', function () {
+        document.querySelectorAll('.filter').forEach(dropdown => dropdown.selectedIndex = 0);
+        document.querySelectorAll('.filter').forEach(dropdown => dropdown.style.display = 'none');
+        document.getElementById('focus-select').style.display = 'inline-block';
+        document.getElementById('reset-btn').style.display = 'none';
+        // Clear results if necessary
+        // ... Add any additional reset logic here ...
+    });
+
+    // Filter videos based on selections
+    function filterVideos() {
+        // ... Add logic to filter videos based on dropdown selections ...
     }
 
-    window.showProfile = function(index) {
-        const video = allVideos[index];
-        const profilePage = document.getElementById('profile-page');
-        profilePage.style.display = 'block';
-        profilePage.innerHTML = `
-            <h2>${video.video_name}</h2>
-            <p>Course: ${video.course_name}</p>
-            <p>Focus: ${video.focus}</p>
-            <p>Types: ${video.types.join(', ')}</p>
-            <p>Disciplines: ${video.disciplines.join(', ')}</p>
-            <p>Targets: ${video.targets.join(', ')}</p>
-            <p>Strategies: ${video.strategies.join(', ')}</p>
-            <p>Techniques: ${video.techniques.map(t => t.variation).join(', ')}</p>
-        `;
-        // Scroll to the profile view
-        profilePage.scrollIntoView();
-    };
+    // Helper function to toggle the display of dropdowns
+    function toggleDropdown(dropdownId, value) {
+        let dropdown = document.getElementById(dropdownId);
+        dropdown.style.display = value ? 'inline-block' : 'none';
+        if (!value) dropdown.selectedIndex = 0; // Reset dropdown if the value is falsey
+    }
+
+    // Function to display filtered results
+    function displayResults(videos) {
+        // ... Add logic to display results ...
+    }
 });
