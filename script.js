@@ -15,8 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
         populateDropdown('type-select', getUniqueValues(videos, 'types'));
         populateDropdown('discipline-select', getUniqueValues(videos, 'disciplines'));
         populateDropdown('target-select', getUniqueValues(videos, 'targets'));
-        // Add technique-select population logic if necessary
-        // Strategy-select is not populated here as strategies are more descriptive and not suited for dropdown filtering in this context
+        // Removed strategy-select and technique-select as per your request
     }
 
     function populateDropdown(dropdownId, options) {
@@ -64,15 +63,18 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     function displayResults(videos) {
-        const container = document.getElementById('results-container');
-        container.innerHTML = ''; // Clear previous results
+        const tableBody = document.getElementById('results-table').querySelector('tbody');
+        tableBody.innerHTML = ''; // Clear previous results
 
         videos.forEach(video => {
-            const div = document.createElement('div');
-            div.classList.add('video-result');
-            div.innerHTML = `<h3>${video.video_name}</h3><p>Focus: ${video.focus}</p>`;
-            // Add more details as needed
-            container.appendChild(div);
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${video.course_name}</td>
+                <td>${video.video_name}</td>
+                <td>${video.strategies.join(', ')}</td>
+                <td>${video.techniques.map(t => t.variation).join(', ')}</td>
+            `;
+            tableBody.appendChild(row);
         });
     }
 });
