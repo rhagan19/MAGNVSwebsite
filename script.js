@@ -89,9 +89,11 @@ function displayResults(videos) {
         strategiesCell.textContent = typeof video.strategies === 'object' ? 
             (Array.isArray(video.strategies) ? video.strategies.join(', ') : Object.values(video.strategies).join(', ')) : 
             'N/A';
-
-        const techniquesCell = row.insertCell(4);
-        techniquesCell.textContent = video.techniques.map(t => t.variation).join(', ');
+        
+        const strategiesCell = row.insertCell(4);
+        strategiesCell.textContent = typeof video.techniques === 'object' ? 
+            (Array.isArray(video.techniques) ? video.techniques.join(', ') : Object.values(video.technqiues).join(', ')) : 
+            'N/A';
     });
 }
 
