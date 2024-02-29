@@ -1,97 +1,137 @@
 {
-  "videos": [
-    {
-      "course_name": "CSA Striking System",
-      "video_name": "Advanced Combo Sequences 11-20 with Integrated Muay Thai Techniques",
-      "focus": "Offensive",
-      "types": ["Boxing Combinations", "Muay Thai Techniques"],
-      "disciplines": ["Boxing", "Muay Thai"],
-      "targets": ["Head", "Body", "Legs"],
-      "strategies": [
-        "Expanding the fighter's striking repertoire with advanced boxing combinations that incorporate Muay Thai techniques for a more versatile offense.",
-        "Building sequences that start with boxing combinations and end with Muay Thai weapons, allowing for creative and effective striking flows.",
-        "Introducing variability in attacks to confuse opponents and create openings for significant strikes."
-      ],
-      "techniques": [
+    "videos": [
         {
-          "variation": "Jab, Cross, Jab with Kick",
-          "description": "A boxing sequence of jab, cross, jab, followed by a Muay Thai kick (leg, body, or head) to capitalize on the created openings."
+            "course_name": "CSA Striking System",
+            "video_name": "Advanced Combo Sequences 11-20 with Integrated Muay Thai Techniques",
+            "focus": "Offensive",
+            "types": [
+                "Boxing Combinations",
+                "Muay Thai Techniques"
+            ],
+            "disciplines": [
+                "Boxing",
+                "Muay Thai"
+            ],
+            "targets": [
+                "Head",
+                "Body",
+                "Legs"
+            ],
+            "strategies": [
+                "Expanding the fighter's striking repertoire with advanced boxing combinations that incorporate Muay Thai techniques for a more versatile offense.",
+                "Building sequences that start with boxing combinations and end with Muay Thai weapons, allowing for creative and effective striking flows.",
+                "Introducing variability in attacks to confuse opponents and create openings for significant strikes."
+            ],
+            "techniques": [
+                {
+                    "variation": "Jab, Cross, Jab with Kick",
+                    "description": "A boxing sequence of jab, cross, jab, followed by a Muay Thai kick (leg, body, or head) to capitalize on the created openings."
+                },
+                {
+                    "variation": "Cross, Jab, Cross with Opposite Kick",
+                    "description": "This combination reverses the traditional jab, cross pattern and includes an opposite leg kick to exploit defensive gaps."
+                }
+            ]
         },
         {
-          "variation": "Cross, Jab, Cross with Opposite Kick",
-          "description": "This combination reverses the traditional jab, cross pattern and includes an opposite leg kick to exploit defensive gaps."
-        }
-      ]
-    },
-    {
-      "course_name": "CSA Striking System",
-      "video_name": "Elbows",
-      "focus": "Offensive",
-      "types": ["Striking"],
-      "disciplines": ["Muay Thai", "MMA"],
-      "targets": ["Head", "Body"],
-      "strategies": [
-        "Utilizing diagonal and upward elbows to penetrate the opponent's guard.",
-        "Employing elbows to clear the guard and create openings for further strikes.",
-        "Focusing on the angle and execution to maximize the cutting potential of elbows, leading to fight-ending injuries."
-      ],
-      "techniques": [
-        {
-          "variation": "Lead Diagonal Elbow",
-          "description": "A sharp, angled strike designed to penetrate or bypass the guard and target the head or body."
+            "course_name": "CSA Striking System",
+            "video_name": "Elbows",
+            "focus": "Offensive",
+            "types": [
+                "Striking"
+            ],
+            "disciplines": [
+                "Muay Thai",
+                "MMA"
+            ],
+            "targets": [
+                "Head",
+                "Body"
+            ],
+            "strategies": [
+                "Utilizing diagonal and upward elbows to penetrate the opponent's guard.",
+                "Employing elbows to clear the guard and create openings for further strikes.",
+                "Focusing on the angle and execution to maximize the cutting potential of elbows, leading to fight-ending injuries."
+            ],
+            "techniques": [
+                {
+                    "variation": "Lead Diagonal Elbow",
+                    "description": "A sharp, angled strike designed to penetrate or bypass the guard and target the head or body."
+                },
+                {
+                    "variation": "Rear Diagonal Elbow",
+                    "description": "Delivered from the rear hand, this elbow comes at a diagonal angle, ideal for creating cuts or breaking through defenses."
+                }
+            ]
         },
         {
-          "variation": "Rear Diagonal Elbow",
-          "description": "Delivered from the rear hand, this elbow comes at a diagonal angle, ideal for creating cuts or breaking through defenses."
-        }
-      ]
-    },
-    {
-      "course_name": "CSA Striking System",
-      "video_name": "Basic Number System for Strikes",
-      "focus": "Offensive",
-      "types": ["Punches", "Kicks", "Elbows", "Knees"],
-      "disciplines": ["Boxing", "Muay Thai", "MMA"],
-      "targets": ["Head", "Body", "Legs"],
-      "strategies": [
-        "Facilitates memorization and quick recall during training and combat.",
-        "Allows for the integration of feints within combinations.",
-        "Enables the creation of fluid combinations using a mix of strikes."
-      ],
-      "techniques": [
-        {
-          "variation": "Jab",
-          "description": "A quick, straight punch thrown with the lead hand, foundational for combinations."
+            "course_name": "CSA Striking System",
+            "video_name": "Basic Number System for Strikes",
+            "focus": "Offensive",
+            "types": [
+                "Punches",
+                "Kicks",
+                "Elbows",
+                "Knees"
+            ],
+            "disciplines": [
+                "Boxing",
+                "Muay Thai",
+                "MMA"
+            ],
+            "targets": [
+                "Head",
+                "Body",
+                "Legs"
+            ],
+            "strategies": [
+                "Facilitates memorization and quick recall during training and combat.",
+                "Allows for the integration of feints within combinations.",
+                "Enables the creation of fluid combinations using a mix of strikes."
+            ],
+            "techniques": [
+                {
+                    "variation": "Jab",
+                    "description": "A quick, straight punch thrown with the lead hand, foundational for combinations."
+                },
+                {
+                    "variation": "Cross",
+                    "description": "A powerful, straight punch delivered with the rear hand, often follows a jab."
+                }
+            ]
         },
         {
-          "variation": "Cross",
-          "description": "A powerful, straight punch delivered with the rear hand, often follows a jab."
+            "course_name": "CSA Striking System",
+            "video_name": "Teeps",
+            "focus": "Offensive",
+            "types": [
+                "Teep",
+                "Front Kick",
+                "Push Kick"
+            ],
+            "disciplines": [
+                "Muay Thai",
+                "MMA"
+            ],
+            "targets": [
+                "Midsection",
+                "Head"
+            ],
+            "strategies": [
+                "Utilizing teeps for range control and to maintain distance from the opponent.",
+                "Incorporating feints and switch movements to disguise the true intention of the teep, creating openings for further attacks.",
+                "Seamlessly integrating teeps into combinations, using them to set up high-impact strikes or to disrupt the opponent's offense."
+            ],
+            "techniques": [
+                {
+                    "variation": "Lead Teep",
+                    "description": "A direct front kick from the lead leg, used for quick jabs to the opponent's midsection or lower body to maintain or create distance."
+                },
+                {
+                    "variation": "Rear Teep",
+                    "description": "Delivered from the back leg, offering more power and used to push the opponent back or off-balance them."
+                }
+            ]
         }
-      ]
-    },
-    {
-      "course_name": "CSA Striking System",
-      "video_name": "Teeps",
-      "focus": "Offensive",
-      "types": ["Teep", "Front Kick", "Push Kick"],
-      "disciplines": ["Muay Thai", "MMA"],
-      "targets": ["Midsection", "Head"],
-      "strategies": [
-        "Utilizing teeps for range control and to maintain distance from the opponent.",
-        "Incorporating feints and switch movements to disguise the true intention of the teep, creating openings for further attacks.",
-        "Seamlessly integrating teeps into combinations, using them to set up high-impact strikes or to disrupt the opponent's offense."
-      ],
-      "techniques": [
-        {
-          "variation": "Lead Teep",
-          "description": "A direct front kick from the lead leg, used for quick jabs to the opponent's midsection or lower body to maintain or create distance."
-        },
-        {
-          "variation": "Rear Teep",
-          "description": "Delivered from the back leg, offering more power and used to push the opponent back or off-balance them."
-        }
-      ]
-    }
-    // Additional entries follow the same structure
-  ]
+    ]
 }
