@@ -1,23 +1,24 @@
 document.addEventListener('DOMContentLoaded', function () {
+    let allVideos = [];
+
     // Fetch JSON data
-    fetch('https://raw.githubusercontent.com/rhagan19/MAGNVSwebsite/main/data.json')
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Error fetching data: ' + response.statusText);
-            }
-            return response.json();
-        })
+    fetch('data.json') // Adjust the URL as needed
+        .then(response => response.json())
         .then(data => {
-            // Populate dropdowns
-            populateDropdown('focus-select', getUniqueValues(data.videos, 'focus'));
-            populateDropdown('type-select', getUniqueValues(data.videos, 'types'));
-            populateDropdown('discipline-select', getUniqueValues(data.videos, 'disciplines'));
-            populateDropdown('target-select', getUniqueValues(data.videos, 'targets'));
-            populateDropdown('technique-select', getUniqueValues(data.videos, 'techniques'));
+            allVideos = data.videos;
+            populateDropdowns(allVideos);
         })
         .catch(error => console.error('Error fetching data:', error));
 
-    // Function to populate dropdown
+    function populateDropdowns(videos) {
+        populateDropdown('focus-select', getUniqueValues(videos, 'focus'));
+        populateDropdown('type-select', getUniqueValues(videos, 'types'));
+        populateDropdown('discipline-select', getUniqueValues(videos, 'disciplines'));
+        populateDropdown('target-select', getUniqueValues(videos, 'targets'));
+        // Add technique-select population logic if necessary
+        // Strategy-select is not populated here as strategies are more descriptive and not suited for dropdown filtering in this context
+    }
+
     function populateDropdown(dropdownId, options) {
         const dropdown = document.getElementById(dropdownId);
         dropdown.innerHTML = ''; // Clear existing options
@@ -33,25 +34,45 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Function to get unique values from array of objects
     function getUniqueValues(array, key) {
-        const uniqueValues = new Set();
+        const unique = new Set();
         array.forEach(item => {
             if (Array.isArray(item[key])) {
-                item[key].forEach(value => uniqueValues.add(value));
+                item[key].forEach(subItem => unique.add(subItem));
             } else {
-                uniqueValues.add(item[key]);
+                unique.add(item[key]);
             }
         });
-        return Array.from(uniqueValues);
+        return [...unique];
     }
 
-    // Event listeners for other interactive elements can go here...
+    // Filter function
+    document.getElementById('search-btn').addEventListener('click', () => {
+        const focusValue = document.getElementById('focus-select').value;
+        const typeValue = document.getElementById('type-select').value;
+        const disciplineValue = document.getElementById('discipline-select').value;
+        const targetValue = document.getElementById('target-select').value;
 
-    // Example: Search functionality
-    document.getElementById('search-btn').addEventListener('click', function () {
-        const searchQuery = document.getElementById('search-box').value;
-        // Perform search based on the query
-        console.log('Search query:', searchQuery);
+        const filteredVideos = allVideos.filter(video => {
+            return (!focusValue || video.focus === focusValue) &&
+                   (!typeValue || video.types.includes(typeValue)) &&
+                   (!disciplineValue || video.disciplines.includes(disciplineValue)) &&
+                   (!targetValue || video.targets.includes(targetValue));
+        });
+
+        displayResults(filteredVideos);
     });
+
+    function displayResults(videos) {
+        const container = document.getElementById('results-container');
+        container.innerHTML = ''; // Clear previous results
+
+        videos.forEach(video => {
+            const div = document.createElement('div');
+            div.classList.add('video-result');
+            div.innerHTML = `<h3>${video.video_name}</h3><p>Focus: ${video.focus}</p>`;
+            // Add more details as needed
+            container.appendChild(div);
+        });
+    }
 });
