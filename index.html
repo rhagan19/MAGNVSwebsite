@@ -16,7 +16,6 @@
             <label for="focus-select">Focus</label>
             <select id="focus-select">
                 <option value="">Select Focus</option>
-                <!-- Options will be populated here by JavaScript -->
             </select>
         </div>
 
@@ -24,7 +23,6 @@
             <label for="type-select">Type</label>
             <select id="type-select">
                 <option value="">Select Type</option>
-                <!-- Options will be populated here by JavaScript -->
             </select>
         </div>
 
@@ -32,7 +30,6 @@
             <label for="discipline-select">Discipline</label>
             <select id="discipline-select">
                 <option value="">Select Discipline</option>
-                <!-- Options will be populated here by JavaScript -->
             </select>
         </div>
 
@@ -40,7 +37,6 @@
             <label for="target-select">Target</label>
             <select id="target-select">
                 <option value="">Select Target</option>
-                <!-- Options will be populated here by JavaScript -->
             </select>
         </div>
     </div>
@@ -50,11 +46,11 @@
         <button id="search-btn">Search</button>
     </div>
 
-    <!-- Container for displaying filtered results -->
     <div id="results-container">
         <table id="results-table">
             <thead>
                 <tr>
+                    <th>Action</th>
                     <th>Course Name</th>
                     <th>Video Name</th>
                     <th>Strategies</th>
@@ -62,9 +58,14 @@
                 </tr>
             </thead>
             <tbody>
-                <!-- Results will be dynamically inserted here by JavaScript -->
+                <!-- Results will be dynamically inserted here -->
             </tbody>
         </table>
+    </div>
+
+    <!-- Profile page structure -->
+    <div id="profile-page" style="display: none;">
+        <!-- Profile content will be dynamically inserted here -->
     </div>
 </div>
 
