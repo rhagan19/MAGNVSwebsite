@@ -93,7 +93,7 @@ function displayResults(videos) {
         }
 
         row.innerHTML = `
-            <td>Action</td>
+            <td>Select</td>
             <td>${video.course_name}</td>
             <td>${video.video_name}</td>
             <td>${strategies}</td>
