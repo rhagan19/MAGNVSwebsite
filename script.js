@@ -2,51 +2,79 @@ document.addEventListener('DOMContentLoaded', function () {
     let allVideos = [];
 
     // Fetch JSON data
-    fetch('data.json')
+    fetch('data.json') // Adjust the URL as needed
         .then(response => response.json())
         .then(data => {
             allVideos = data.videos;
-            initializeFilters();
+            populateDropdowns(allVideos);
         })
         .catch(error => console.error('Error fetching data:', error));
 
-    function initializeFilters() {
-        // Initialize your filters based on the allVideos data
-        // For example:
-        populateDropdown('focus-select', extractUniquePropertyValues(allVideos, 'focus'));
-        // ... and so on for other filters if needed
+    function populateDropdowns(videos) {
+        populateDropdown('focus-select', getUniqueValues(videos, 'focus'));
+        populateDropdown('type-select', getUniqueValues(videos, 'types'));
+        populateDropdown('discipline-select', getUniqueValues(videos, 'disciplines'));
+        populateDropdown('target-select', getUniqueValues(videos, 'targets'));
+        // Removed strategy-select and technique-select as per your request
     }
 
     function populateDropdown(dropdownId, options) {
         const dropdown = document.getElementById(dropdownId);
+        dropdown.innerHTML = ''; // Clear existing options
+        const defaultOption = document.createElement('option');
+        defaultOption.text = 'Select';
+        defaultOption.value = '';
+        dropdown.appendChild(defaultOption);
         options.forEach(option => {
-            const opt = document.createElement('option');
-            opt.value = option;
-            opt.textContent = option;
-            dropdown.appendChild(opt);
+            const newOption = document.createElement('option');
+            newOption.text = option;
+            newOption.value = option;
+            dropdown.appendChild(newOption);
         });
     }
 
-    function extractUniquePropertyValues(videos, property) {
-        const values = videos.map(video => video[property]);
-        return [...new Set(values)].sort();
+    function getUniqueValues(array, key) {
+        const unique = new Set();
+        array.forEach(item => {
+            if (Array.isArray(item[key])) {
+                item[key].forEach(subItem => unique.add(subItem));
+            } else {
+                unique.add(item[key]);
+            }
+        });
+        return [...unique];
     }
 
-    // Event listener for the 'focus-select' dropdown changes
-    document.getElementById('focus-select').addEventListener('change', function () {
-        // Show the next filter, populate it, and handle cascading logic
-        // Similar to the example provided in the previous response
+    // Filter function
+    document.getElementById('search-btn').addEventListener('click', () => {
+        const focusValue = document.getElementById('focus-select').value;
+        const typeValue = document.getElementById('type-select').value;
+        const disciplineValue = document.getElementById('discipline-select').value;
+        const targetValue = document.getElementById('target-select').value;
+
+        const filteredVideos = allVideos.filter(video => {
+            return (!focusValue || video.focus === focusValue) &&
+                   (!typeValue || video.types.includes(typeValue)) &&
+                   (!disciplineValue || video.disciplines.includes(disciplineValue)) &&
+                   (!targetValue || video.targets.includes(targetValue));
+        });
+
+        displayResults(filteredVideos);
     });
 
-    // Event listeners for other dropdowns would go here
+    function displayResults(videos) {
+        const tableBody = document.getElementById('results-table').querySelector('tbody');
+        tableBody.innerHTML = ''; // Clear previous results
 
-    document.getElementById('search-btn').addEventListener('click', function () {
-        // Handle the search action
-    });
-
-    document.getElementById('reset-btn').addEventListener('click', function () {
-        // Handle the reset action
-    });
-
-    // Add other functions and event listeners as needed
+        videos.forEach(video => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${video.course_name}</td>
+                <td>${video.video_name}</td>
+                <td>${video.strategies.join(', ')}</td>
+                <td>${video.techniques.map(t => t.variation).join(', ')}</td>
+            `;
+            tableBody.appendChild(row);
+        });
+    }
 });
