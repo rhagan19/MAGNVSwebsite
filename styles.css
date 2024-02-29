@@ -6,9 +6,9 @@ body {
 }
 
 #library-container {
-    max-width: 100%;
+    max-width: 100%; /* Adjusted for full width */
     margin: auto;
-    padding: 20px 10px;
+    padding: 20px 10px; /* Less padding on the sides */
 }
 
 h1 {
@@ -36,18 +36,16 @@ h1 {
 }
 
 .filter-group select {
-    width: calc(100% - 22px); /* Adjusted width for consistency */
-    height: 40px; /* Set the height for consistency */
-    padding: 10px; /* Adjusted padding for centered appearance */
-    margin-bottom: 20px; /* Increased margin for spacing */
+    width: calc(100% - 30px); /* Adjusted width for square appearance */
+    padding: 10px;
+    margin-bottom: 10px; /* Space below dropdown */
     border: 1px solid #ccc;
-    border-radius: 8px; /* Adjusted border radius for consistency */
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
+    border-radius: 4px; /* More square borders */
+    -webkit-appearance: none; /* Removes default styling for WebKit browsers */
+    -moz-appearance: none; /* Removes default styling for Mozilla browsers */
+    appearance: none; /* Removes default styling */
     background-color: #fff;
     cursor: pointer;
-}
 }
 
 .filter-group:after {
@@ -93,7 +91,7 @@ h1 {
     color: #fff;
     border: none;
     cursor: pointer;
-    border-radius: 4px;
+    border-radius: 4px; /* More square appearance */
 }
 
 #search-area {
