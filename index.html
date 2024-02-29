@@ -10,30 +10,39 @@
 
 <div id="library-container">
     <h1>The MAGNVS Library</h1>
+
     <div id="filters">
-        <select id="focus-select">
-            <option value="">Select Focus</option>
-        </select>
+        <div class="filter-group">
+            <label for="focus-select">Focus</label>
+            <select id="focus-select">
+                <option value="">Select Focus</option>
+                <!-- Options will be populated here by JavaScript -->
+            </select>
+        </div>
 
-        <select id="type-select">
-            <option value="">Select Type</option>
-        </select>
+        <div class="filter-group">
+            <label for="type-select">Type</label>
+            <select id="type-select">
+                <option value="">Select Type</option>
+                <!-- Options will be populated here by JavaScript -->
+            </select>
+        </div>
 
-        <select id="discipline-select">
-            <option value="">Select Discipline</option>
-        </select>
+        <div class="filter-group">
+            <label for="discipline-select">Discipline</label>
+            <select id="discipline-select">
+                <option value="">Select Discipline</option>
+                <!-- Options will be populated here by JavaScript -->
+            </select>
+        </div>
 
-        <select id="target-select">
-            <option value="">Select Target</option>
-        </select>
-
-        <select id="strategy-select">
-            <option value="">Select Strategy</option>
-        </select>
-
-        <select id="technique-select">
-            <option value="">Select Technique</option>
-        </select>
+        <div class="filter-group">
+            <label for="target-select">Target</label>
+            <select id="target-select">
+                <option value="">Select Target</option>
+                <!-- Options will be populated here by JavaScript -->
+            </select>
+        </div>
     </div>
 
     <div id="search-area">
@@ -43,7 +52,19 @@
 
     <!-- Container for displaying filtered results -->
     <div id="results-container">
-        <!-- Results will be dynamically inserted here -->
+        <table id="results-table">
+            <thead>
+                <tr>
+                    <th>Course Name</th>
+                    <th>Video Name</th>
+                    <th>Strategies</th>
+                    <th>Techniques</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Results will be dynamically inserted here by JavaScript -->
+            </tbody>
+        </table>
     </div>
 </div>
 
