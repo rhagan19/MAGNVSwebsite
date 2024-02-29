@@ -1,113 +1,58 @@
- let allVideos = [];
-    let filters = {
-        'focus': null,
-        'type': null,
-        'discipline': null,
-        'target': null
-    };
+body {
+    font-family: Arial, sans-serif;
+}
 
-    // Fetch JSON data
-    fetch('data.json') // Adjust the URL as needed
-        .then(response => response.json())
-        .then(data => {
-            allVideos = data.videos;
-            populateDropdown('focus-select', getUniqueValues(allVideos, 'focus'));
-        })
-        .catch(error => console.error('Error fetching data:', error));
+#library-container {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
 
-    function populateDropdown(dropdownId, options) {
-        const dropdown = document.getElementById(dropdownId);
-        dropdown.innerHTML = '<option value="">Select</option>'; // Add default option
-        options.forEach(option => {
-            const newOption = document.createElement('option');
-            newOption.text = option;
-            newOption.value = option;
-            dropdown.appendChild(newOption);
-        });
-    }
+#filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
 
-    function getUniqueValues(array, key) {
-        const unique = array.map(item => item[key]).filter((value, index, self) => self.indexOf(value) === index);
-        unique.sort(); // Sort alphabetically or by your preferred method
-        return unique;
-    }
+.filter-group {
+    margin: 10px;
+}
 
-    document.getElementById('focus-select').addEventListener('change', function () {
-        filters.focus = this.value;
-        if (this.value) {
-            document.getElementById('type-select').style.display = 'block';
-            document.getElementById('reset-btn').style.display = 'block';
-            populateDropdown('type-select', getUniqueValues(allVideos.filter(video => video.focus === this.value), 'type'));
-        } else {
-            resetFilters();
-        }
-    });
+.filter-group label {
+    display: block;
+    margin-bottom: 5px;
+}
 
-    document.getElementById('type-select').addEventListener('change', function () {
-        filters.type = this.value;
-        if (this.value) {
-            document.getElementById('discipline-select').style.display = 'block';
-            populateDropdown('discipline-select', getUniqueValues(allVideos.filter(video => video.type === this.value), 'discipline'));
-        } else {
-            document.getElementById('discipline-select').style.display = 'none';
-        }
-    });
+.filter {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
 
-    document.getElementById('discipline-select').addEventListener('change', function () {
-        filters.discipline = this.value;
-        if (this.value) {
-            document.getElementById('target-link').style.display = 'inline';
-        } else {
-            document.getElementById('target-link').style.display = 'none';
-        }
-    });
+#search-btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
 
-    document.getElementById('search-btn').addEventListener('click', () => {
-        const filteredVideos = allVideos.filter(video => {
-            return (!filters.focus || video.focus === filters.focus) &&
-                   (!filters.type || video.type === filters.type) &&
-                   (!filters.discipline || video.discipline === filters.discipline);
-            // Assuming 'target' value is set somewhere else since it's now a link, not a select box
-        });
+#reset-btn {
+    padding: 10px 20px;
+    background-color: #f8f9fa;
+    color: black;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none; /* Initially hidden */
+}
 
-        displayResults(filteredVideos);
-    });
+#results-container {
+    margin-top: 20px;
+}
 
-    document.getElementById('reset-btn').addEventListener('click', resetFilters);
-
-    function resetFilters() {
-        filters = {
-            'focus': null,
-            'type': null,
-            'discipline': null,
-            'target': null
-        };
-        populateDropdown('focus-select', getUniqueValues(allVideos, 'focus'));
-        document.getElementById('type-select').style.display = 'none';
-        document.getElementById('discipline-select').style.display = 'none';
-        document.getElementById('target-link').style.display = 'none';
-        document.getElementById('reset-btn').style.display = 'none';
-        // Clear results if necessary
-    }
-
-    function displayResults(videos) {
-        const tableBody = document.getElementById('results-table').querySelector('tbody');
-        tableBody.innerHTML = ''; // Clear previous results
-
-        videos.forEach((video, index) => {
-            const row = document.createElement('tr');
-            row.innerHTML = `
-                <td><button class="select-button" onclick="showProfile(${index})">Select</button></td>
-                <td>${video.course_name}</td>
-                <td>${video.video_name}</td>
-                <td>${video.strategies.join(', ')}</td>
-                <td>${video.techniques.map(t => t.variation).join(', ')}</td>
-            `;
-            tableBody.appendChild(row);
-        });
-    }
-
-    window.showProfile = function (index) {
-        // ... rest of the showProfile function remains unchanged ...
-    };
-});
+/* Additional styles */
+/* ... */
