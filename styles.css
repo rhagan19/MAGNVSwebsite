@@ -1,128 +1,114 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-}
+document.addEventListener('DOMContentLoaded', function () {
+    let allVideos = [];
+    let filters = {
+        'focus': null,
+        'type': null,
+        'discipline': null,
+        'target': null
+    };
 
-#library-container {
-    max-width: 100%; /* Adjusted for full width */
-    margin: auto;
-    padding: 20px 10px; /* Less padding on the sides */
-}
+    // Fetch JSON data
+    fetch('data.json') // Adjust the URL as needed
+        .then(response => response.json())
+        .then(data => {
+            allVideos = data.videos;
+            populateDropdown('focus-select', getUniqueValues(allVideos, 'focus'));
+        })
+        .catch(error => console.error('Error fetching data:', error));
 
-h1 {
-    color: #333;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-#filters {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 10px;
-    background-color: #eee;
-    padding: 20px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-}
-
-.filter-group label {
-    text-align: center;
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-.filter-group select {
-    width: calc(100% - 30px); /* Adjusted width for square appearance */
-    padding: 10px;
-    margin-bottom: 10px; /* Space below dropdown */
-    border: 1px solid #ccc;
-    border-radius: 4px; /* More square borders */
-    -webkit-appearance: none; /* Removes default styling for WebKit browsers */
-    -moz-appearance: none; /* Removes default styling for Mozilla browsers */
-    appearance: none; /* Removes default styling */
-    background-color: #fff;
-    cursor: pointer;
-}
-
-.filter-group:after {
-    content: '▼';
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-50%);
-    pointer-events: none;
-}
-
-#results-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-#results-table thead {
-    background-color: #6C7A89;
-    color: #fff;
-}
-
-#results-table th, #results-table td {
-    text-align: left;
-    padding: 12px;
-    border-bottom: 1px solid #ddd;
-}
-
-#results-table tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
-
-#results-table tr:hover {
-    background-color: #f5f5f5;
-}
-
-.select-button {
-    display: inline-block;
-    padding: 8px 12px;
-    margin-right: 10px;
-    background-color: #3498db;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    border-radius: 4px; /* More square appearance */
-}
-
-#search-area {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-#search-box {
-    padding: 10px;
-    width: 60%;
-    border: 1px solid #ccc;
-    border-radius: 20px;
-}
-
-#search-btn {
-    padding: 10px 20px;
-    margin-left: 10px;
-    border: none;
-    border-radius: 20px;
-    background-color: #3498db;
-    color: white;
-    cursor: pointer;
-}
-
-@media (max-width: 768px) {
-    #filters {
-        flex-direction: column;
-        align-items: center;
+    function populateDropdown(dropdownId, options) {
+        const dropdown = document.getElementById(dropdownId);
+        dropdown.innerHTML = '<option value="">Select</option>'; // Add default option
+        options.forEach(option => {
+            const newOption = document.createElement('option');
+            newOption.text = option;
+            newOption.value = option;
+            dropdown.appendChild(newOption);
+        });
     }
 
-    #search-box {
-        width: 80%;
+    function getUniqueValues(array, key) {
+        const unique = array.map(item => item[key]).filter((value, index, self) => self.indexOf(value) === index);
+        unique.sort(); // Sort alphabetically or by your preferred method
+        return unique;
     }
-}
+
+    document.getElementById('focus-select').addEventListener('change', function () {
+        filters.focus = this.value;
+        if (this.value) {
+            document.getElementById('type-select').style.display = 'block';
+            document.getElementById('reset-btn').style.display = 'block';
+            populateDropdown('type-select', getUniqueValues(allVideos.filter(video => video.focus === this.value), 'type'));
+        } else {
+            resetFilters();
+        }
+    });
+
+    document.getElementById('type-select').addEventListener('change', function () {
+        filters.type = this.value;
+        if (this.value) {
+            document.getElementById('discipline-select').style.display = 'block';
+            populateDropdown('discipline-select', getUniqueValues(allVideos.filter(video => video.type === this.value), 'discipline'));
+        } else {
+            document.getElementById('discipline-select').style.display = 'none';
+        }
+    });
+
+    document.getElementById('discipline-select').addEventListener('change', function () {
+        filters.discipline = this.value;
+        if (this.value) {
+            document.getElementById('target-link').style.display = 'inline';
+        } else {
+            document.getElementById('target-link').style.display = 'none';
+        }
+    });
+
+    document.getElementById('search-btn').addEventListener('click', () => {
+        const filteredVideos = allVideos.filter(video => {
+            return (!filters.focus || video.focus === filters.focus) &&
+                   (!filters.type || video.type === filters.type) &&
+                   (!filters.discipline || video.discipline === filters.discipline);
+            // Assuming 'target' value is set somewhere else since it's now a link, not a select box
+        });
+
+        displayResults(filteredVideos);
+    });
+
+    document.getElementById('reset-btn').addEventListener('click', resetFilters);
+
+    function resetFilters() {
+        filters = {
+            'focus': null,
+            'type': null,
+            'discipline': null,
+            'target': null
+        };
+        populateDropdown('focus-select', getUniqueValues(allVideos, 'focus'));
+        document.getElementById('type-select').style.display = 'none';
+        document.getElementById('discipline-select').style.display = 'none';
+        document.getElementById('target-link').style.display = 'none';
+        document.getElementById('reset-btn').style.display = 'none';
+        // Clear results if necessary
+    }
+
+    function displayResults(videos) {
+        const tableBody = document.getElementById('results-table').querySelector('tbody');
+        tableBody.innerHTML = ''; // Clear previous results
+
+        videos.forEach((video, index) => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td><button class="select-button" onclick="showProfile(${index})">Select</button></td>
+                <td>${video.course_name}</td>
+                <td>${video.video_name}</td>
+                <td>${video.strategies.join(', ')}</td>
+                <td>${video.techniques.map(t => t.variation).join(', ')}</td>
+            `;
+            tableBody.appendChild(row);
+        });
+    }
+
+    window.showProfile = function (index) {
+        // ... rest of the showProfile function remains unchanged ...
+    };
+});
