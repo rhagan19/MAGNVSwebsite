@@ -1,65 +1,52 @@
 document.addEventListener('DOMContentLoaded', function () {
     let allVideos = [];
-    let filters = {
-        focus: null,
-        type: null,
-        discipline: null,
-        target: null
-    };
 
     // Fetch JSON data
     fetch('data.json')
         .then(response => response.json())
         .then(data => {
             allVideos = data.videos;
-            populateDropdown('focus-select', getUniqueValues(allVideos, 'focus'));
+            initializeFilters();
         })
         .catch(error => console.error('Error fetching data:', error));
+
+    function initializeFilters() {
+        // Initialize your filters based on the allVideos data
+        // For example:
+        populateDropdown('focus-select', extractUniquePropertyValues(allVideos, 'focus'));
+        // ... and so on for other filters if needed
+    }
 
     function populateDropdown(dropdownId, options) {
         const dropdown = document.getElementById(dropdownId);
         options.forEach(option => {
             const opt = document.createElement('option');
             opt.value = option;
-            opt.innerHTML = option;
+            opt.textContent = option;
             dropdown.appendChild(opt);
         });
     }
 
-    function getUniqueValues(videos, key) {
-        return Array.from(new Set(videos.map(video => video[key])));
+    function extractUniquePropertyValues(videos, property) {
+        const values = videos.map(video => video[property]);
+        return [...new Set(values)].sort();
     }
 
+    // Event listener for the 'focus-select' dropdown changes
     document.getElementById('focus-select').addEventListener('change', function () {
-        const value = this.value;
-        filters.focus = value;
-        toggleDropdown('type-select', value);
-        if (value) {
-            const types = getUniqueValues(allVideos.filter(video => video.focus === value), 'type');
-            populateDropdown('type-select', types);
-        }
+        // Show the next filter, populate it, and handle cascading logic
+        // Similar to the example provided in the previous response
     });
 
-    document.getElementById('type-select').addEventListener('change', function () {
-        const value = this.value;
-        filters.type = value;
-        toggleDropdown('discipline-select', value);
-        if (value) {
-            const disciplines = getUniqueValues(allVideos.filter(video => video.type === value), 'discipline');
-            populateDropdown('discipline-select', disciplines);
-        }
-    });
-
-    document.getElementById('discipline-select').addEventListener('change', function () {
-        const value = this.value;
-        filters.discipline = value;
-        toggleDropdown('target-select', value);
-        if (value) {
-            const targets = getUniqueValues(allVideos.filter(video => video.discipline === value), 'target');
-            populateDropdown('target-select', targets);
-        }
-    });
+    // Event listeners for other dropdowns would go here
 
     document.getElementById('search-btn').addEventListener('click', function () {
-        const filteredVideos = allVideos.filter(video => {
-            return
+        // Handle the search action
+    });
+
+    document.getElementById('reset-btn').addEventListener('click', function () {
+        // Handle the reset action
+    });
+
+    // Add other functions and event listeners as needed
+});
