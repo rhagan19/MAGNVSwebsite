@@ -67,38 +67,29 @@ function displayResults(videos) {
     // Clear existing table rows
     resultsTable.innerHTML = '';
 
-    videos.forEach(video => {
+    videos.forEach((video, index) => {
         const row = resultsTable.insertRow();
 
-        // Handle strategies if it's an array or an object
-        let strategies = '';
-        if (Array.isArray(video.strategies)) {
-            strategies = video.strategies.join(', ');
-        } else if (typeof video.strategies === 'object') {
-            strategies = Object.values(video.strategies).join(', ');
-        } else {
-            strategies = video.strategies || 'N/A';
-        }
+        // Create the 'Select' button and add a click event listener
+        const selectCell = row.insertCell(0);
+        const selectButton = document.createElement('button');
+        selectButton.textContent = 'Select';
+        selectButton.className = 'select-button';
+        selectButton.onclick = function() { showProfile(index); };
+        selectCell.appendChild(selectButton);
 
-        // Handle techniques if it's an array of objects or strings
-        let techniques = '';
-        if (Array.isArray(video.techniques)) {
-            if (video.techniques.length > 0 && typeof video.techniques[0] === 'object') {
-                techniques = video.techniques.map(t => t.variation).join(', ');
-            } else if (typeof video.techniques[0] === 'string') {
-                techniques = video.techniques.join(', ');
-            }
-        } else {
-            techniques = 'N/A';
-        }
+        // The rest of the cells
+        const courseNameCell = row.insertCell(1);
+        courseNameCell.textContent = video.course_name;
 
-        row.innerHTML = `
-            <td>Select</td>
-            <td>${video.course_name}</td>
-            <td>${video.video_name}</td>
-            <td>${strategies}</td>
-            <td>${techniques}</td>
-        `;
+        const videoNameCell = row.insertCell(2);
+        videoNameCell.textContent = video.video_name;
+
+        const strategiesCell = row.insertCell(3);
+        strategiesCell.textContent = Array.isArray(video.strategies) ? video.strategies.join(', ') : video.strategies;
+
+        const techniquesCell = row.insertCell(4);
+        techniquesCell.textContent = video.techniques.map(t => t.variation).join(', ');
     });
 }
 
