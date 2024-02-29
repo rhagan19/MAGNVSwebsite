@@ -14,56 +14,45 @@
     <div id="filters">
         <div class="filter-group">
             <label for="focus-select">Focus</label>
-            <select id="focus-select">
+            <select id="focus-select" class="filter">
                 <option value="">Select Focus</option>
+                <!-- Focus options will be dynamically loaded here -->
             </select>
         </div>
 
-        <div class="filter-group">
+        <div class="filter-group" style="display:none;">
             <label for="type-select">Type</label>
-            <select id="type-select">
+            <select id="type-select" class="filter">
                 <option value="">Select Type</option>
+                <!-- Type options will be dynamically loaded here -->
             </select>
         </div>
 
-        <div class="filter-group">
+        <div class="filter-group" style="display:none;">
             <label for="discipline-select">Discipline</label>
-            <select id="discipline-select">
+            <select id="discipline-select" class="filter">
                 <option value="">Select Discipline</option>
+                <!-- Discipline options will be dynamically loaded here -->
             </select>
         </div>
 
-        <div class="filter-group">
+        <div class="filter-group" style="display:none;">
             <label for="target-select">Target</label>
-            <select id="target-select">
+            <select id="target-select" class="filter">
                 <option value="">Select Target</option>
+                <!-- Target options will be dynamically loaded here -->
             </select>
         </div>
-    </div>
 
-    <div id="search-area">
-        <input type="text" id="search-box" placeholder="Search here...">
-        <button id="search-btn">Search</button>
+        <button id="search-btn" class="filter">Search</button>
+        <button id="reset-btn" class="filter" style="display:none;">Reset</button>
     </div>
 
     <div id="results-container">
-        <table id="results-table">
-            <thead>
-                <tr>
-                    <th>Action</th>
-                    <th>Course Name</th>
-                    <th>Video Name</th>
-                    <th>Strategies</th>
-                    <th>Techniques</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Results will be dynamically inserted here -->
-            </tbody>
-        </table>
+        <!-- Results will be dynamically inserted here -->
     </div>
 
-    <!-- Profile page structure -->
+    <!-- Profile page structure (if needed) -->
     <div id="profile-page" style="display: none;">
         <!-- Profile content will be dynamically inserted here -->
     </div>
