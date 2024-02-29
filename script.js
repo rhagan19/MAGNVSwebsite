@@ -1,98 +1,65 @@
 document.addEventListener('DOMContentLoaded', function () {
     let allVideos = [];
+    let filters = {
+        focus: null,
+        type: null,
+        discipline: null,
+        target: null
+    };
 
     // Fetch JSON data
-    fetch('data.json') // Adjust the URL as needed
+    fetch('data.json')
         .then(response => response.json())
         .then(data => {
             allVideos = data.videos;
-            populateDropdowns(allVideos);
+            populateDropdown('focus-select', getUniqueValues(allVideos, 'focus'));
         })
         .catch(error => console.error('Error fetching data:', error));
 
-    function populateDropdowns(videos) {
-        populateDropdown('focus-select', getUniqueValues(videos, 'focus'));
-        populateDropdown('type-select', getUniqueValues(videos, 'types'));
-        populateDropdown('discipline-select', getUniqueValues(videos, 'disciplines'));
-        populateDropdown('target-select', getUniqueValues(videos, 'targets'));
-    }
-
     function populateDropdown(dropdownId, options) {
         const dropdown = document.getElementById(dropdownId);
-        dropdown.innerHTML = ''; // Clear existing options
-        const defaultOption = document.createElement('option');
-        defaultOption.text = 'Select';
-        defaultOption.value = '';
-        dropdown.appendChild(defaultOption);
         options.forEach(option => {
-            const newOption = document.createElement('option');
-            newOption.text = option;
-            newOption.value = option;
-            dropdown.appendChild(newOption);
+            const opt = document.createElement('option');
+            opt.value = option;
+            opt.innerHTML = option;
+            dropdown.appendChild(opt);
         });
     }
 
-    function getUniqueValues(array, key) {
-        const unique = new Set();
-        array.forEach(item => {
-            if (Array.isArray(item[key])) {
-                item[key].forEach(subItem => unique.add(subItem));
-            } else {
-                unique.add(item[key]);
-            }
-        });
-        return [...unique];
+    function getUniqueValues(videos, key) {
+        return Array.from(new Set(videos.map(video => video[key])));
     }
 
-    // Filter function
-    document.getElementById('search-btn').addEventListener('click', () => {
-        const focusValue = document.getElementById('focus-select').value;
-        const typeValue = document.getElementById('type-select').value;
-        const disciplineValue = document.getElementById('discipline-select').value;
-        const targetValue = document.getElementById('target-select').value;
-
-        const filteredVideos = allVideos.filter(video => {
-            return (!focusValue || video.focus === focusValue) &&
-                   (!typeValue || video.types.includes(typeValue)) &&
-                   (!disciplineValue || video.disciplines.includes(disciplineValue)) &&
-                   (!targetValue || video.targets.includes(targetValue));
-        });
-
-        displayResults(filteredVideos);
+    document.getElementById('focus-select').addEventListener('change', function () {
+        const value = this.value;
+        filters.focus = value;
+        toggleDropdown('type-select', value);
+        if (value) {
+            const types = getUniqueValues(allVideos.filter(video => video.focus === value), 'type');
+            populateDropdown('type-select', types);
+        }
     });
 
-    function displayResults(videos) {
-        const tableBody = document.getElementById('results-table').querySelector('tbody');
-        tableBody.innerHTML = ''; // Clear previous results
+    document.getElementById('type-select').addEventListener('change', function () {
+        const value = this.value;
+        filters.type = value;
+        toggleDropdown('discipline-select', value);
+        if (value) {
+            const disciplines = getUniqueValues(allVideos.filter(video => video.type === value), 'discipline');
+            populateDropdown('discipline-select', disciplines);
+        }
+    });
 
-        videos.forEach((video, index) => {
-            const row = document.createElement('tr');
-            row.innerHTML = `
-                <td><button class="select-button" onclick="showProfile(${index})">Select</button></td>
-                <td>${video.course_name}</td>
-                <td>${video.video_name}</td>
-                <td>${video.strategies.join(', ')}</td>
-                <td>${video.techniques.map(t => t.variation).join(', ')}</td>
-            `;
-            tableBody.appendChild(row);
-        });
-    }
+    document.getElementById('discipline-select').addEventListener('change', function () {
+        const value = this.value;
+        filters.discipline = value;
+        toggleDropdown('target-select', value);
+        if (value) {
+            const targets = getUniqueValues(allVideos.filter(video => video.discipline === value), 'target');
+            populateDropdown('target-select', targets);
+        }
+    });
 
-    window.showProfile = function(index) {
-        const video = allVideos[index];
-        const profilePage = document.getElementById('profile-page');
-        profilePage.style.display = 'block';
-        profilePage.innerHTML = `
-            <h2>${video.video_name}</h2>
-            <p>Course: ${video.course_name}</p>
-            <p>Focus: ${video.focus}</p>
-            <p>Types: ${video.types.join(', ')}</p>
-            <p>Disciplines: ${video.disciplines.join(', ')}</p>
-            <p>Targets: ${video.targets.join(', ')}</p>
-            <p>Strategies: ${video.strategies.join(', ')}</p>
-            <p>Techniques: ${video.techniques.map(t => t.variation).join(', ')}</p>
-        `;
-        // Scroll to the profile view
-        profilePage.scrollIntoView();
-    };
-}); 
+    document.getElementById('search-btn').addEventListener('click', function () {
+        const filteredVideos = allVideos.filter(video => {
+            return
