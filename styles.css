@@ -6,9 +6,9 @@ body {
 }
 
 #library-container {
-    max-width: 100%; /* Adjusted for full width */
+    max-width: 100%;
     margin: auto;
-    padding: 20px 10px; /* Less padding on the sides */
+    padding: 20px 10px;
 }
 
 h1 {
@@ -36,14 +36,15 @@ h1 {
 }
 
 .filter-group select {
-    width: calc(100% - 30px); /* Adjusted width for square appearance */
-    padding: 10px;
-    margin-bottom: 10px; /* Space below dropdown */
+    width: calc(100% - 40px); /* Adjusted width for consistency and centered appearance */
+    height: 40px; /* Set the height for consistency */
+    padding: 12px; /* Adjusted padding for centered appearance */
+    margin-bottom: 20px; /* Increased margin for spacing */
     border: 1px solid #ccc;
-    border-radius: 4px; /* More square borders */
-    -webkit-appearance: none; /* Removes default styling for WebKit browsers */
-    -moz-appearance: none; /* Removes default styling for Mozilla browsers */
-    appearance: none; /* Removes default styling */
+    border-radius: 8px; /* Adjusted border radius for consistency */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
     background-color: #fff;
     cursor: pointer;
 }
@@ -91,7 +92,7 @@ h1 {
     color: #fff;
     border: none;
     cursor: pointer;
-    border-radius: 4px; /* More square appearance */
+    border-radius: 4px;
 }
 
 #search-area {
