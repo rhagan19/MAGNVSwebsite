@@ -12,46 +12,60 @@
     <h1>The MAGNVS Library</h1>
 
     <div id="filters">
-        <!-- Focus Dropdown -->
         <div class="filter-group">
-            <select id="focus-select" class="filter">
+            <label for="focus-select">Focus</label>
+            <select id="focus-select">
                 <option value="">Select Focus</option>
-                <!-- Focus options will be dynamically loaded here -->
             </select>
         </div>
 
-        <!-- Type Dropdown (initially hidden) -->
-        <div class="filter-group" style="display:none;">
-            <select id="type-select" class="filter">
+        <div class="filter-group">
+            <label for="type-select">Type</label>
+            <select id="type-select">
                 <option value="">Select Type</option>
-                <!-- Type options will be dynamically loaded here -->
             </select>
         </div>
 
-        <!-- Discipline Dropdown (initially hidden) -->
-        <div class="filter-group" style="display:none;">
-            <select id="discipline-select" class="filter">
+        <div class="filter-group">
+            <label for="discipline-select">Discipline</label>
+            <select id="discipline-select">
                 <option value="">Select Discipline</option>
-                <!-- Discipline options will be dynamically loaded here -->
             </select>
         </div>
 
-        <!-- Target Dropdown (initially hidden) -->
-        <div class="filter-group" style="display:none;">
-            <select id="target-select" class="filter">
+        <div class="filter-group">
+            <label for="target-select">Target</label>
+            <select id="target-select">
                 <option value="">Select Target</option>
-                <!-- Target options will be dynamically loaded here -->
             </select>
         </div>
-
-        <!-- Search and Reset Buttons -->
-        <button id="search-btn" class="filter-button">Search</button>
-        <button id="reset-btn" class="filter-button" style="display:none;">Reset</button>
     </div>
 
-    <!-- Results Table -->
+    <div id="search-area">
+        <input type="text" id="search-box" placeholder="Search here...">
+        <button id="search-btn">Search</button>
+    </div>
+
     <div id="results-container">
-        <!-- Results will be dynamically inserted here -->
+        <table id="results-table">
+            <thead>
+                <tr>
+                    <th>Action</th>
+                    <th>Course Name</th>
+                    <th>Video Name</th>
+                    <th>Strategies</th>
+                    <th>Techniques</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Results will be dynamically inserted here -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Profile page structure -->
+    <div id="profile-page" style="display: none;">
+        <!-- Profile content will be dynamically inserted here -->
     </div>
 </div>
 
