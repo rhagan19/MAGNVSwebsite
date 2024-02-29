@@ -62,21 +62,24 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     function displayResults(videos) {
-        const tableBody = document.getElementById('results-table').querySelector('tbody');
-        tableBody.innerHTML = ''; // Clear previous results
+        const resultsContainer = document.getElementById('results');
+        resultsContainer.innerHTML = '';
+            videos.forEach(video => {
+        const videoElement = document.createElement('div');
+            videoElement.classList.add('video');
+        const strategies = Array.isArray(video.strategies) ? video.strategies.join(', ') : video.strategies;
+        videoElement.innerHTML = `
+            <h2>${video.course_name} - ${video.video_name}</h2>
+            <p><strong>Focus:</strong> ${video.focus}</p>
+            <p><strong>Types:</strong> ${video.types.join(', ')}</p>
+            <p><strong>Disciplines:</strong> ${video.disciplines.join(', ')}</p>
+            <p><strong>Targets:</strong> ${video.targets.join(', ')}</p>
+            <p><strong>Strategies:</strong> ${strategies}</p>
+        `;
+        resultsContainer.appendChild(videoElement);
+    });
+}
 
-        videos.forEach((video, index) => {
-            const row = document.createElement('tr');
-            row.innerHTML = `
-                <td><button class="select-button" onclick="showProfile(${index})">Select</button></td>
-                <td>${video.course_name}</td>
-                <td>${video.video_name}</td>
-                <td>${video.strategies.join(', ')}</td>
-                <td>${video.techniques.map(t => t.variation).join(', ')}</td>
-            `;
-            tableBody.appendChild(row);
-        });
-    }
 
     window.showProfile = function(index) {
         const video = allVideos[index];
