@@ -36,9 +36,9 @@ h1 {
 }
 
 .filter-group select {
-    width: calc(100% - 40px); /* Adjusted width for consistency and centered appearance */
+    width: calc(100% - 30px); /* Adjusted width for consistency and centered appearance */
     height: 40px; /* Set the height for consistency */
-    padding: 12px; /* Adjusted padding for centered appearance */
+    padding: 10px; /* Adjusted padding for centered appearance */
     margin-bottom: 20px; /* Increased margin for spacing */
     border: 1px solid #ccc;
     border-radius: 8px; /* Adjusted border radius for consistency */
