@@ -36,7 +36,7 @@ h1 {
 }
 
 .filter-group select {
-    width: calc(100% - 30px); /* Adjusted width for consistency and centered appearance */
+    width: calc(100% - 22px); /* Adjusted width for consistency */
     height: 40px; /* Set the height for consistency */
     padding: 10px; /* Adjusted padding for centered appearance */
     margin-bottom: 20px; /* Increased margin for spacing */
@@ -47,6 +47,7 @@ h1 {
     appearance: none;
     background-color: #fff;
     cursor: pointer;
+}
 }
 
 .filter-group:after {
