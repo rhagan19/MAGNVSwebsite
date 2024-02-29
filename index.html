@@ -14,40 +14,36 @@
     <div id="filters">
         <div class="filter-group">
             <label for="focus-select">Focus</label>
-            <select id="focus-select" class="filter">
+            <select id="focus-select">
                 <option value="">Select Focus</option>
-                <!-- Focus options will be dynamically loaded here -->
             </select>
         </div>
 
-        <!-- The following select elements will be hidden initially and shown dynamically based on the previous selections -->
-        <div class="filter-group" style="display:none;">
-            <label for="type-select">Type</label>
-            <select id="type-select" class="filter">
-                <option value="">Select Type</option>
-                <!-- Type options will be dynamically loaded here -->
-            </select>
-        </div>
-
-        <div class="filter-group" style="display:none;">
-            <label for="discipline-select">Discipline</label>
-            <select id="discipline-select" class="filter">
-                <option value="">Select Discipline</option>
-                <!-- Discipline options will be dynamically loaded here -->
-            </select>
-        </div>
-
-        <!-- This has been changed to an anchor to look like a hyperlink as per your request -->
-        <div class="filter-group" style="display:none;">
-            <label for="target-link">Target</label>
-            <a id="target-link" class="filter" href="#" style="color: #007bff; text-decoration: underline;">Select</a>
-        </div>
-
-        <!-- Reset button added next to the Search button -->
         <div class="filter-group">
-            <button id="search-btn" class="filter">Search</button>
-            <button id="reset-btn" class="filter" style="display:none;">Reset</button>
+            <label for="type-select">Type</label>
+            <select id="type-select">
+                <option value="">Select Type</option>
+            </select>
         </div>
+
+        <div class="filter-group">
+            <label for="discipline-select">Discipline</label>
+            <select id="discipline-select">
+                <option value="">Select Discipline</option>
+            </select>
+        </div>
+
+        <div class="filter-group">
+            <label for="target-select">Target</label>
+            <select id="target-select">
+                <option value="">Select Target</option>
+            </select>
+        </div>
+    </div>
+
+    <div id="search-area">
+        <input type="text" id="search-box" placeholder="Search here...">
+        <button id="search-btn">Search</button>
     </div>
 
     <div id="results-container">
