@@ -70,13 +70,27 @@ function displayResults(videos) {
     videos.forEach(video => {
         const row = resultsTable.insertRow();
 
-        // Check if strategies is an array and join, else keep as is or set a default value
-        const strategies = Array.isArray(video.strategies) ? video.strategies.join(', ') : video.strategies || 'N/A';
+        // Handle strategies if it's an array or an object
+        let strategies = '';
+        if (Array.isArray(video.strategies)) {
+            strategies = video.strategies.join(', ');
+        } else if (typeof video.strategies === 'object') {
+            strategies = Object.values(video.strategies).join(', ');
+        } else {
+            strategies = video.strategies || 'N/A';
+        }
 
-        // Map techniques to their variations, join with comma or set a default value if empty
-        const techniques = video.techniques && video.techniques.length > 0 
-                           ? video.techniques.map(technique => technique.variation).join(', ') 
-                           : 'N/A';
+        // Handle techniques if it's an array of objects or strings
+        let techniques = '';
+        if (Array.isArray(video.techniques)) {
+            if (video.techniques.length > 0 && typeof video.techniques[0] === 'object') {
+                techniques = video.techniques.map(t => t.variation).join(', ');
+            } else if (typeof video.techniques[0] === 'string') {
+                techniques = video.techniques.join(', ');
+            }
+        } else {
+            techniques = 'N/A';
+        }
 
         row.innerHTML = `
             <td>Action</td>
