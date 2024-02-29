@@ -15,7 +15,6 @@ document.addEventListener('DOMContentLoaded', function () {
         populateDropdown('type-select', getUniqueValues(videos, 'types'));
         populateDropdown('discipline-select', getUniqueValues(videos, 'disciplines'));
         populateDropdown('target-select', getUniqueValues(videos, 'targets'));
-        // Removed strategy-select and technique-select as per your request
     }
 
     function populateDropdown(dropdownId, options) {
@@ -66,9 +65,10 @@ document.addEventListener('DOMContentLoaded', function () {
         const tableBody = document.getElementById('results-table').querySelector('tbody');
         tableBody.innerHTML = ''; // Clear previous results
 
-        videos.forEach(video => {
+        videos.forEach((video, index) => {
             const row = document.createElement('tr');
             row.innerHTML = `
+                <td><button class="select-button" onclick="showProfile(${index})">Select</button></td>
                 <td>${video.course_name}</td>
                 <td>${video.video_name}</td>
                 <td>${video.strategies.join(', ')}</td>
@@ -77,4 +77,22 @@ document.addEventListener('DOMContentLoaded', function () {
             tableBody.appendChild(row);
         });
     }
+
+    window.showProfile = function(index) {
+        const video = allVideos[index];
+        const profilePage = document.getElementById('profile-page');
+        profilePage.style.display = 'block';
+        profilePage.innerHTML = `
+            <h2>${video.video_name}</h2>
+            <p>Course: ${video.course_name}</p>
+            <p>Focus: ${video.focus}</p>
+            <p>Types: ${video.types.join(', ')}</p>
+            <p>Disciplines: ${video.disciplines.join(', ')}</p>
+            <p>Targets: ${video.targets.join(', ')}</p>
+            <p>Strategies: ${video.strategies.join(', ')}</p>
+            <p>Techniques: ${video.techniques.map(t => t.variation).join(', ')}</p>
+        `;
+        // Scroll to the profile view
+        profilePage.scrollIntoView();
+    };
 });
