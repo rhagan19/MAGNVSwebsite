@@ -9,10 +9,11 @@ document.addEventListener('DOMContentLoaded', function () {
         })
         .then(data => {
             // Populate dropdowns
-            populateDropdown('type-select', data.types);
-            populateDropdown('discipline-select', data.disciplines);
-            populateDropdown('target-select', data.targets);
-            populateDropdown('technique-select', data.techniques);
+            populateDropdown('focus-select', getUniqueValues(data.videos, 'focus'));
+            populateDropdown('type-select', getUniqueValues(data.videos, 'types'));
+            populateDropdown('discipline-select', getUniqueValues(data.videos, 'disciplines'));
+            populateDropdown('target-select', getUniqueValues(data.videos, 'targets'));
+            populateDropdown('technique-select', getUniqueValues(data.videos, 'techniques'));
         })
         .catch(error => console.error('Error fetching data:', error));
 
@@ -30,6 +31,19 @@ document.addEventListener('DOMContentLoaded', function () {
             newOption.value = option;
             dropdown.appendChild(newOption);
         });
+    }
+
+    // Function to get unique values from array of objects
+    function getUniqueValues(array, key) {
+        const uniqueValues = new Set();
+        array.forEach(item => {
+            if (Array.isArray(item[key])) {
+                item[key].forEach(value => uniqueValues.add(value));
+            } else {
+                uniqueValues.add(item[key]);
+            }
+        });
+        return Array.from(uniqueValues);
     }
 
     // Event listeners for other interactive elements can go here...
