@@ -61,22 +61,22 @@ document.addEventListener('DOMContentLoaded', function () {
         displayResults(filteredVideos);
     });
 
-    function displayResults(videos) {
-        const resultsContainer = document.getElementById('results');
-        resultsContainer.innerHTML = '';
-            videos.forEach(video => {
-        const videoElement = document.createElement('div');
-            videoElement.classList.add('video');
-        const strategies = Array.isArray(video.strategies) ? video.strategies.join(', ') : video.strategies;
-        videoElement.innerHTML = `
-            <h2>${video.course_name} - ${video.video_name}</h2>
-            <p><strong>Focus:</strong> ${video.focus}</p>
-            <p><strong>Types:</strong> ${video.types.join(', ')}</p>
-            <p><strong>Disciplines:</strong> ${video.disciplines.join(', ')}</p>
-            <p><strong>Targets:</strong> ${video.targets.join(', ')}</p>
-            <p><strong>Strategies:</strong> ${strategies}</p>
+function displayResults(videos) {
+    const resultsTable = document.getElementById('results-table').getElementsByTagName('tbody')[0];
+
+    // Clear existing table rows
+    resultsTable.innerHTML = '';
+
+    videos.forEach(video => {
+        const row = resultsTable.insertRow();
+
+        row.innerHTML = `
+            <td>Action</td>
+            <td>${video.course_name}</td>
+            <td>${video.video_name}</td>
+            <td>${video.strategies}</td>
+            <td>${video.techniques.map(technique => technique.variation).join(', ')}</td>
         `;
-        resultsContainer.appendChild(videoElement);
     });
 }
 
