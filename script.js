@@ -61,48 +61,36 @@ document.addEventListener('DOMContentLoaded', function () {
         displayResults(filteredVideos);
     });
 
-function displayResults(videos) {
-    const resultsTable = document.getElementById('results-table').getElementsByTagName('tbody')[0];
-    resultsTable.innerHTML = ''; // Clear existing table rows
+    function displayResults(videos) {
+        const resultsTable = document.getElementById('results-table').getElementsByTagName('tbody')[0];
+        resultsTable.innerHTML = ''; // Clear existing table rows
 
-    videos.forEach((video, index) => {
-        const row = resultsTable.insertRow();
-        const selectCell = row.insertCell(0);
-        const selectButton = document.createElement('button');
-        selectButton.textContent = 'Select';
-        selectButton.className = 'select-button';
-        selectButton.onclick = function() { showProfile(index); };
-        selectCell.appendChild(selectButton);
+        videos.forEach((video, index) => {
+            const row = resultsTable.insertRow();
 
-        const courseNameCell = row.insertCell(1);
-        courseNameCell.textContent = video.course_name;
+            // Create the 'Select' button
+            const selectCell = row.insertCell(0);
+            const selectButton = document.createElement('button');
+            selectButton.textContent = 'Select';
+            selectButton.className = 'select-button';
+            // Redirect to the new page with the video index when the button is clicked
+            selectButton.addEventListener('click', function() {
+                window.location.href = `video-details.html?index=${index}`;
+            });
+            selectCell.appendChild(selectButton);
 
-        const videoNameCell = row.insertCell(2);
-        videoNameCell.textContent = video.video_name;
+            // The rest of the cells
+            const courseNameCell = row.insertCell(1);
+            courseNameCell.textContent = video.course_name;
 
-        const strategiesCell = row.insertCell(3);
-        strategiesCell.textContent = Array.isArray(video.strategies) ? video.strategies.join(', ') : video.strategies || 'N/A';
+            const videoNameCell = row.insertCell(2);
+            videoNameCell.textContent = video.video_name;
 
-        const techniquesCell = row.insertCell(4);
-        techniquesCell.textContent = Array.isArray(video.techniques) ? video.techniques.map(t => t.variation).join(', ') : 'N/A';
-    });
-}
+            const strategiesCell = row.insertCell(3);
+            strategiesCell.textContent = Array.isArray(video.strategies) ? video.strategies.join(', ') : video.strategies || 'N/A';
 
-    window.showProfile = function(index) {
-        const video = allVideos[index];
-        const profilePage = document.getElementById('profile-page');
-        profilePage.style.display = 'block';
-        profilePage.innerHTML = `
-            <h2>${video.video_name}</h2>
-            <p>Course: ${video.course_name}</p>
-            <p>Focus: ${video.focus}</p>
-            <p>Types: ${video.types.join(', ')}</p>
-            <p>Disciplines: ${video.disciplines.join(', ')}</p>
-            <p>Targets: ${video.targets.join(', ')}</p>
-            <p>Strategies: ${video.strategies.join(', ')}</p>
-            <p>Techniques: ${video.techniques.map(t => t.variation).join(', ')}</p>
-        `;
-        // Scroll to the profile view
-        profilePage.scrollIntoView();
-    };
+            const techniquesCell = row.insertCell(4);
+            techniquesCell.textContent = Array.isArray(video.techniques) ? video.techniques.map(t => t.variation).join(', ') : 'N/A';
+        });
+    }
 });
