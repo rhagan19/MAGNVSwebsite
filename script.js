@@ -70,12 +70,20 @@ function displayResults(videos) {
     videos.forEach(video => {
         const row = resultsTable.insertRow();
 
+        // Check if strategies is an array and join, else keep as is or set a default value
+        const strategies = Array.isArray(video.strategies) ? video.strategies.join(', ') : video.strategies || 'N/A';
+
+        // Map techniques to their variations, join with comma or set a default value if empty
+        const techniques = video.techniques && video.techniques.length > 0 
+                           ? video.techniques.map(technique => technique.variation).join(', ') 
+                           : 'N/A';
+
         row.innerHTML = `
             <td>Action</td>
             <td>${video.course_name}</td>
             <td>${video.video_name}</td>
-            <td>${video.strategies}</td>
-            <td>${video.techniques.map(technique => technique.variation).join(', ')}</td>
+            <td>${strategies}</td>
+            <td>${techniques}</td>
         `;
     });
 }
