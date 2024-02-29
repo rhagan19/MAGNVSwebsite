@@ -79,69 +79,6 @@
                     "description": "A reverse elbow strike from the lead arm, useful for opponents coming in close or as a counter to a forward movement.",
                     "timestamp": "00:59:20-01:01:07"
                 }
-            ],
-            "defensive": {
-                "focus": "Defensive",
-                "types": [
-                    "Guard Penetration",
-                    "Counter-Striking"
-                ],
-                "disciplines": [
-                    "Muay Thai",
-                    "MMA"
-                ],
-                "targets": [
-                    "Head",
-                    "Body"
-                ],
-                "strategies": {
-                    "creating": "Using elbows to create defensive openings and counter opportunities.",
-                    "disrupting": "Disrupting the opponent's attack rhythm with sharp elbow counters.",
-                    "guarding": "Incorporating elbow strikes in defensive maneuvers to protect against incoming strikes."
-                },
-                "notes": "The correct posture and execution of elbow strikes are crucial to prevent self-injury and maximize impact on the opponent."
-            },
-            "transcript_reference": "00:00:06:09 - 00:02:28:15",
-            "key_points": [
-                "Elbows are crucial in Muay Thai and MMA for their effectiveness in close combat and their ability to cause significant damage.",
-                "The diagonal, upward, and back elbow strikes are highlighted for their strategic application in breaking through defenses and creating openings.",
-                "The importance of correct form, including the angle of attack and body positioning, to ensure maximum effectiveness and safety."
-            ]
-        },
-        {
-            "course_name": "CSA Striking System",
-            "video_name": "Basic Number System for Strikes",
-            "focus": "Offensive",
-            "types": [
-                "Punches",
-                "Kicks",
-                "Elbows",
-                "Knees"
-            ],
-            "disciplines": [
-                "Boxing",
-                "Muay Thai",
-                "MMA"
-            ],
-            "targets": [
-                "Head",
-                "Body",
-                "Legs"
-            ],
-            "strategies": [
-                "Facilitates memorization and quick recall during training and combat.",
-                "Allows for the integration of feints within combinations.",
-                "Enables the creation of fluid combinations using a mix of strikes."
-            ],
-            "techniques": [
-                {
-                    "variation": "Jab",
-                    "description": "A quick, straight punch thrown with the lead hand, foundational for combinations."
-                },
-                {
-                    "variation": "Cross",
-                    "description": "A powerful, straight punch delivered with the rear hand, often follows a jab."
-                }
             ]
         },
         {
@@ -176,6 +113,34 @@
                     "description": "Delivered from the back leg, offering more power and used to push the opponent back or off-balance them."
                 }
             ]
+        }, 
+        {
+            "course_name": "CSA Striking System",
+            "video_name": "Course 3: Video 1",
+            "focus": "Defensive",
+            "types": [
+                "Guard Penetration",
+                "Counter-Striking"
+            ],
+            "disciplines": [
+                "Muay Thai",
+                "MMA"
+            ],
+            "targets": [
+                "Head",
+                "Body"
+            ],
+            "strategies": {
+                "creating": "Using elbows to create defensive openings and counter opportunities.",
+                "disrupting": "Disrupting the opponent's attack rhythm with sharp elbow counters.",
+                "guarding": "Incorporating elbow strikes in defensive maneuvers to protect against incoming strikes."
+            },
+            "techniques": [
+                "Elbows are crucial in Muay Thai and MMA for their effectiveness in close combat and their ability to cause significant damage.",
+                "The diagonal, upward, and back elbow strikes are highlighted for their strategic application in breaking through defenses and creating openings.",
+                "The importance of correct form, including the angle of attack and body positioning, to ensure maximum effectiveness and safety."
+            ]
         }
+
     ]
 }
