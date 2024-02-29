@@ -35,9 +35,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
     document.getElementById('focus-select').addEventListener('change', function () {
         filters.focus = this.value;
+        let typeSelectGroup = document.getElementById('type-select').parentElement;
+        let resetBtn = document.getElementById('reset-btn');
         if (this.value) {
-            document.getElementById('type-select').style.display = 'block';
-            document.getElementById('reset-btn').style.display = 'block';
+            typeSelectGroup.style.display = 'block';
+            resetBtn.style.display = 'inline-block'; // Assuming the reset button should be inline with the search button
             populateDropdown('type-select', getUniqueValues(allVideos.filter(video => video.focus === this.value), 'type'));
         } else {
             resetFilters();
@@ -46,20 +48,22 @@ document.addEventListener('DOMContentLoaded', function () {
 
     document.getElementById('type-select').addEventListener('change', function () {
         filters.type = this.value;
+        let disciplineSelectGroup = document.getElementById('discipline-select').parentElement;
         if (this.value) {
-            document.getElementById('discipline-select').style.display = 'block';
+            disciplineSelectGroup.style.display = 'block';
             populateDropdown('discipline-select', getUniqueValues(allVideos.filter(video => video.type === this.value), 'discipline'));
         } else {
-            document.getElementById('discipline-select').style.display = 'none';
+            disciplineSelectGroup.style.display = 'none';
         }
     });
 
     document.getElementById('discipline-select').addEventListener('change', function () {
         filters.discipline = this.value;
+        let targetLinkGroup = document.getElementById('target-link').parentElement;
         if (this.value) {
-            document.getElementById('target-link').style.display = 'inline';
+            targetLinkGroup.style.display = 'block';
         } else {
-            document.getElementById('target-link').style.display = 'none';
+            targetLinkGroup.style.display = 'none';
         }
     });
 
@@ -84,9 +88,9 @@ document.addEventListener('DOMContentLoaded', function () {
             'target': null
         };
         populateDropdown('focus-select', getUniqueValues(allVideos, 'focus'));
-        document.getElementById('type-select').style.display = 'none';
-        document.getElementById('discipline-select').style.display = 'none';
-        document.getElementById('target-link').style.display = 'none';
+        document.getElementById('type-select').parentElement.style.display = 'none';
+        document.getElementById('discipline-select').parentElement.style.display = 'none';
+        document.getElementById('target-link').parentElement.style.display = 'none';
         document.getElementById('reset-btn').style.display = 'none';
         // Clear results if necessary
     }
