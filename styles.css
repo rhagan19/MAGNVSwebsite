@@ -6,7 +6,7 @@ body {
 }
 
 #library-container {
-    max-width: 90%; /* Adjusted for full width */
+    max-width: 100%; /* Adjusted for full width */
     margin: auto;
     padding: 20px 10px; /* Less padding on the sides */
 }
@@ -71,10 +71,6 @@ h1 {
     margin-top: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-.hidden {
-    display: none;
-}
-
 
 /* ... other styles remain unchanged ... */
 
