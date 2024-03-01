@@ -8,66 +8,36 @@
 </head>
 <body>
 
-<div id="library-container">
-    <h1>The MAGNVS Library</h1>
+<div class="sidebar">
+    <!-- Dynamically populated list of course names -->
+    <div class="sidebar-item">Course 1</div>
+    <div class="sidebar-item">Course 2</div>
+    <!-- More courses -->
+</div>
 
-    <div id="filters">
-        <div class="filter-group">
-            <label for="focus-select">Focus</label>
-            <select id="focus-select">
-                <option value="">Select Focus</option>
-                <!-- Other options will be here -->
-            </select>
-        </div>
-
-        <div class="filter-group">
-            <label for="type-select">Type</label>
-            <select id="type-select">
-                <option value="">Select Type</option>
-                <!-- Other options will be here -->
-            </select>
-        </div>
-
-        <div class="filter-group">
-            <label for="discipline-select">Discipline</label>
-            <select id="discipline-select">
-                <option value="">Select Discipline</option>
-                <!-- Other options will be here -->
-            </select>
-        </div>
-
-        <div class="filter-group">
-            <label for="target-select">Target</label>
-            <select id="target-select">
-                <option value="">Select Target</option>
-                <!-- Other options will be here -->
-            </select>
-        </div>
-
-        <button id="search-btn">Search</button>
+<div class="content">
+    <div class="filters">
+        <!-- Your existing filters for Focus, Type, Discipline, Target -->
     </div>
 
-    <div id="results-container">
-        <table id="results-table">
-            <thead>
-                <tr>
-                    <th>Select</th>
-                    <th>Course Name</th>
-                    <th>Video Name</th>
-                    <th>Strategies</th>
-                    <th>Techniques</th>
-                </tr>
-            </thead>
-            <tbody>
-            <!-- Results will be dynamically inserted here -->
-            </tbody>
-        </table>
+    <div class="search-container">
+        <input type="text" id="search-box" placeholder="Search here...">
     </div>
 
-    <!-- Profile page structure -->
-    <div id="profile-page" style="display: none;">
-        <!-- Profile content will be dynamically inserted here -->
-    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Course Name</th>
+                <th>Video Name</th>
+                <th>Strategies</th>
+                <th>Techniques</th>
+                <!-- More table headers if needed -->
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Table data populated by JavaScript -->
+        </tbody>
+    </table>
 </div>
 
 <script src="script.js"></script>
