@@ -1,92 +1,59 @@
+/* styles.css */
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-}
-
-#library-container {
-    max-width: 100%; /* Adjusted for full width */
-    margin: auto;
-    padding: 20px 10px; /* Less padding on the sides */
-}
-
-h1 {
-    color: #333;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-#filters {
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 10px;
-    background-color: #eee;
+}
+
+.sidebar {
+    width: 200px; /* Adjust the width as necessary */
+    background-color: #f4f4f4;
     padding: 20px;
-    border-radius: 8px;
-    margin-bottom: 20px;
 }
 
-.filter-group label {
-    text-align: center;
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
+.sidebar-item {
+    margin-bottom: 10px;
+    /* Add additional styling for your sidebar items here */
 }
 
-.filter-group select {
-    width: 100%; /* Filters will take up 100% of the flex item's width */
+.content {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+.filters {
+    display: flex;
+    justify-content: start;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.search-container {
+    float: right;
+}
+
+#search-box {
     padding: 10px;
-    margin-bottom: 0; /* Removed the margin-bottom */
-    border: 1px solid #ccc;
-    border-radius: 4px; /* More square borders */
-    -webkit-appearance: none; /* Removes default styling for WebKit browsers */
-    -moz-appearance: none; /* Removes default styling for Mozilla browsers */
-    appearance: none; /* Removes default styling */
-    background-color: #fff;
-    cursor: pointer;
+    margin-bottom: 20px;
+    /* Add additional styling for your search box here */
 }
 
-.filter-group {
-    flex: 1; /* Allows the filters to grow and take equal space */
-    position: relative; /* For positioning the dropdown arrow */
-    min-width: 150px; /* Minimum width of filter elements */
-}
-
-/* Updated styles for the search button */
-#search-btn {
-    padding: 10px 20px;
-    background-color: #3498db;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 4px; /* Matched border-radius to other elements */
-    margin-left: auto; /* Pushes the button to the right */
-}
-
-#results-table {
+table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    table-layout: fixed; /* This ensures that columns can be set to a specific width */
 }
 
-/* ... other styles remain unchanged ... */
+th, td {
+    text-align: left;
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
 
-/* Updated media query for responsiveness */
-@media (max-width: 768px) {
-    #filters {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .filter-group {
-        width: 100%; /* Make the filter groups full width on smaller screens */
-    }
-
-    #search-btn {
-        width: 100%;
-        margin-top: 10px; /* Add some space above the button */
-    }
+th {
+    background-color: #eee;
 }
