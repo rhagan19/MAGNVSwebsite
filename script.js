@@ -41,18 +41,18 @@ document.addEventListener('DOMContentLoaded', function () {
         return [...unique];
     }
 
-    // Event listener for the search bar
-    const searchBox = document.getElementById('search-box');
-    searchBox.addEventListener('keyup', function() {
-        const searchText = searchBox.value.toLowerCase();
-        const filteredVideos = allVideos.filter(video => {
-            return video.course_name.toLowerCase().includes(searchText) ||
-                   video.video_name.toLowerCase().includes(searchText) ||
-                   (video.strategies && video.strategies.some(strategy => strategy.toLowerCase().includes(searchText))) ||
-                   (video.techniques && video.techniques.some(technique => technique.variation.toLowerCase().includes(searchText)));
-        });
-        displayResults(filteredVideos);
+// Event listener for the search button
+document.getElementById('search-btn').addEventListener('click', function() {
+    const searchText = searchBox.value.toLowerCase();
+    const filteredVideos = allVideos.filter(video => {
+        return video.course_name.toLowerCase().includes(searchText) ||
+               video.video_name.toLowerCase().includes(searchText) ||
+               (video.strategies && video.strategies.some(strategy => strategy.toLowerCase().includes(searchText))) ||
+               (video.techniques && video.techniques.some(technique => technique.variation.toLowerCase().includes(searchText)));
     });
+    displayResults(filteredVideos);
+});
+
 
     function displayResults(videos) {
         const resultsTable = document.getElementById('results-table').getElementsByTagName('tbody')[0];
