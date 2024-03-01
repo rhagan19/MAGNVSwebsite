@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
         .then(data => {
             allVideos = data.videos;
             populateDropdowns(allVideos);
+            displayResults(allVideos); // Display all videos initially
         })
         .catch(error => console.error('Error fetching data:', error));
 
@@ -19,11 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function populateDropdown(dropdownId, options) {
         const dropdown = document.getElementById(dropdownId);
-        dropdown.innerHTML = ''; // Clear existing options
-        const defaultOption = document.createElement('option');
-        defaultOption.text = 'Select';
-        defaultOption.value = '';
-        dropdown.appendChild(defaultOption);
+        dropdown.innerHTML = '<option value="">Select</option>'; // Clear existing options and add the default option
         options.forEach(option => {
             const newOption = document.createElement('option');
             newOption.text = option;
@@ -44,68 +41,60 @@ document.addEventListener('DOMContentLoaded', function () {
         return [...unique];
     }
 
-    // Filter function
-    document.getElementById('search-btn').addEventListener('click', () => {
-        const focusValue = document.getElementById('focus-select').value;
-        const typeValue = document.getElementById('type-select').value;
-        const disciplineValue = document.getElementById('discipline-select').value;
-        const targetValue = document.getElementById('target-select').value;
-
+    // Event listener for the search bar
+    const searchBox = document.getElementById('search-box');
+    searchBox.addEventListener('keyup', function() {
+        const searchText = searchBox.value.toLowerCase();
         const filteredVideos = allVideos.filter(video => {
-            return (!focusValue || video.focus === focusValue) &&
-                   (!typeValue || video.types.includes(typeValue)) &&
-                   (!disciplineValue || video.disciplines.includes(disciplineValue)) &&
-                   (!targetValue || video.targets.includes(targetValue));
+            return video.course_name.toLowerCase().includes(searchText) ||
+                   video.video_name.toLowerCase().includes(searchText) ||
+                   (video.strategies && video.strategies.some(strategy => strategy.toLowerCase().includes(searchText))) ||
+                   (video.techniques && video.techniques.some(technique => technique.variation.toLowerCase().includes(searchText)));
         });
-
         displayResults(filteredVideos);
     });
 
-function displayResults(videos) {
-    const resultsTable = document.getElementById('results-table').getElementsByTagName('tbody')[0];
-    resultsTable.innerHTML = ''; // Clear existing table rows
+    function displayResults(videos) {
+        const resultsTable = document.getElementById('results-table').getElementsByTagName('tbody')[0];
+        resultsTable.innerHTML = ''; // Clear existing table rows
 
-    videos.forEach((video, index) => {
-        const row = resultsTable.insertRow();
+        videos.forEach((video, index) => {
+            const row = resultsTable.insertRow();
 
-        // Create the 'Select' button
-        const selectCell = row.insertCell(0);
-        const selectButton = document.createElement('button');
-        selectButton.textContent = 'Select';
-        selectButton.className = 'select-button';
-        selectButton.addEventListener('click', function() {
-            window.location.href = `video-details.html?index=${index}`;
+            // Create the 'Select' button
+            const selectCell = row.insertCell(0);
+            const selectButton = document.createElement('button');
+            selectButton.textContent = 'Select';
+            selectButton.className = 'select-button';
+            selectButton.addEventListener('click', function() {
+                window.location.href = `video-details.html?index=${index}`;
+            });
+            selectCell.appendChild(selectButton);
+
+            // The rest of the cells
+            const courseNameCell = row.insertCell(1);
+            courseNameCell.textContent = video.course_name;
+
+            const videoNameCell = row.insertCell(2);
+            videoNameCell.textContent = video.video_name;
+
+            // Handle strategies
+            const strategiesCell = row.insertCell(3);
+            if (Array.isArray(video.strategies)) {
+                strategiesCell.textContent = video.strategies.join(', ');
+            } else if (typeof video.strategies === 'object') {
+                strategiesCell.textContent = Object.values(video.strategies).join(', ');
+            } else {
+                strategiesCell.textContent = 'N/A';
+            }
+
+            // Handle techniques
+            const techniquesCell = row.insertCell(4);
+            if (Array.isArray(video.techniques)) {
+                techniquesCell.textContent = video.techniques.map(t => t.variation || 'N/A').join(', ');
+            } else {
+                techniquesCell.textContent = 'N/A';
+            }
         });
-        selectCell.appendChild(selectButton);
-
-        // The rest of the cells
-        const courseNameCell = row.insertCell(1);
-        courseNameCell.textContent = video.course_name;
-
-        const videoNameCell = row.insertCell(2);
-        videoNameCell.textContent = video.video_name;
-
-        // Handle strategies
-        const strategiesCell = row.insertCell(3);
-        if (Array.isArray(video.strategies)) {
-            strategiesCell.textContent = video.strategies.join(', ');
-        } else if (typeof video.strategies === 'object') {
-            strategiesCell.textContent = Object.values(video.strategies).join(', ');
-        } else {
-            strategiesCell.textContent = 'N/A';
-        }
-
-        // Handle techniques
-        const techniquesCell = row.insertCell(4);
-        if (Array.isArray(video.techniques)) {
-            techniquesCell.textContent = video.techniques.map(t => {
-                // Check if technique has a variation property and it's not empty
-                return t.variation ? t.variation : 'N/A';
-            }).join(', ');
-        } else {
-            techniquesCell.textContent = 'N/A';
-        }
-    });
-}
-
+    }
 });
