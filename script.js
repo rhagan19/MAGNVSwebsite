@@ -92,14 +92,16 @@ function displayResults(videos) {
         } else if (typeof video.strategies === 'object') {
             strategiesCell.textContent = Object.values(video.strategies).join(', ');
         } else {
-            strategiesCell.textContent = video.strategies || 'N/A';
+            strategiesCell.textContent = 'N/A';
         }
 
         // Handle techniques
         const techniquesCell = row.insertCell(4);
-        if (Array.isArray(video.techniques) && video.techniques.length > 0) {
-            const techniqueStrings = video.techniques.map(tech => tech.variation).filter(variation => variation != null);
-            techniquesCell.textContent = techniqueStrings.join(', ');
+        if (Array.isArray(video.techniques)) {
+            techniquesCell.textContent = video.techniques.map(t => {
+                // Check if technique has a variation property and it's not empty
+                return t.variation ? t.variation : 'N/A';
+            }).join(', ');
         } else {
             techniquesCell.textContent = 'N/A';
         }
