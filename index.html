@@ -8,47 +8,50 @@
 </head>
 <body>
 
-<div class="sidebar">
-    <!-- Sidebar items would be dynamically generated, but here are some static examples -->
-    <div class="sidebar-item">CSA Striking Course</div>
-    <div class="sidebar-item">Advanced Muay Thai</div>
-    <!-- More sidebar items here -->
-</div>
-    
-<div class="search-bar">
-    <input type="text" id="search-box" placeholder="Search here...">
-    <button id="search-btn">Search</button>
-</div>
-    
-<div class="main-content">
-    <div class="top-bar">
-        <div class="filter-bar">
+<div id="library-container">
+    <h1>The MAGNVS Library</h1>
+
+    <div id="filters">
+        <div class="filter-group">
+            <label for="focus-select">Focus</label>
             <select id="focus-select">
                 <option value="">Select Focus</option>
-                <!-- Focus options will be dynamically inserted here -->
+                <!-- Other options will be here -->
             </select>
+        </div>
+
+        <div class="filter-group">
+            <label for="type-select">Type</label>
             <select id="type-select">
                 <option value="">Select Type</option>
-                <!-- Type options will be dynamically inserted here -->
+                <!-- Other options will be here -->
             </select>
+        </div>
+
+        <div class="filter-group">
+            <label for="discipline-select">Discipline</label>
             <select id="discipline-select">
                 <option value="">Select Discipline</option>
-                <!-- Discipline options will be dynamically inserted here -->
+                <!-- Other options will be here -->
             </select>
+        </div>
+
+        <div class="filter-group">
+            <label for="target-select">Target</label>
             <select id="target-select">
                 <option value="">Select Target</option>
-                <!-- Target options will be dynamically inserted here -->
+                <!-- Other options will be here -->
             </select>
         </div>
-        <div class="search-bar">
-            <input type="text" id="search-box" placeholder="Search here...">
-        </div>
+
+        <button id="search-btn">Search</button>
     </div>
-    
-    <div class="table-container">
-        <table>
+
+    <div id="results-container">
+        <table id="results-table">
             <thead>
                 <tr>
+                    <th>Select</th>
                     <th>Course Name</th>
                     <th>Video Name</th>
                     <th>Strategies</th>
@@ -56,9 +59,14 @@
                 </tr>
             </thead>
             <tbody>
-                <!-- Table data would be dynamically generated here -->
+            <!-- Results will be dynamically inserted here -->
             </tbody>
         </table>
+    </div>
+
+    <!-- Profile page structure -->
+    <div id="profile-page" style="display: none;">
+        <!-- Profile content will be dynamically inserted here -->
     </div>
 </div>
 
