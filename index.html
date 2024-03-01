@@ -9,15 +9,31 @@
 <body>
 
 <div class="sidebar">
-    <!-- Dynamically populated list of course names -->
+    <!-- Sidebar items would be dynamically generated, but here are some static examples -->
     <div class="sidebar-item">CSA Striking Course</div>
-    <!-- More courses -->
+    <div class="sidebar-item">Advanced Muay Thai</div>
+    <!-- More sidebar items here -->
 </div>
 
 <div class="main-content">
     <div class="top-bar">
         <div class="filter-bar">
-            <!-- Your existing filters for Focus, Type, Discipline, Target will be inserted here -->
+            <select id="focus-select">
+                <option value="">Select Focus</option>
+                <!-- Focus options will be dynamically inserted here -->
+            </select>
+            <select id="type-select">
+                <option value="">Select Type</option>
+                <!-- Type options will be dynamically inserted here -->
+            </select>
+            <select id="discipline-select">
+                <option value="">Select Discipline</option>
+                <!-- Discipline options will be dynamically inserted here -->
+            </select>
+            <select id="target-select">
+                <option value="">Select Target</option>
+                <!-- Target options will be dynamically inserted here -->
+            </select>
         </div>
         <div class="search-bar">
             <input type="text" id="search-box" placeholder="Search here...">
@@ -35,7 +51,7 @@
                 </tr>
             </thead>
             <tbody>
-                <!-- Table data populated by JavaScript -->
+                <!-- Table data would be dynamically generated here -->
             </tbody>
         </table>
     </div>
