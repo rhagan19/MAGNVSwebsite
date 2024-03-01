@@ -85,15 +85,24 @@ function displayResults(videos) {
         const videoNameCell = row.insertCell(2);
         videoNameCell.textContent = video.video_name;
 
+        // Handle strategies
         const strategiesCell = row.insertCell(3);
-        strategiesCell.textContent = typeof video.strategies === 'object' ? 
-            (Array.isArray(video.strategies) ? video.strategies.join(', ') : Object.values(video.strategies).join(', ')) : 
-            'N/A';
-        
-        const strategiesCell = row.insertCell(4);
-        strategiesCell.textContent = typeof video.techniques === 'object' ? 
-            (Array.isArray(video.techniques) ? video.techniques.join(', ') : Object.values(video.technqiues).join(', ')) : 
-            'N/A';
+        if (Array.isArray(video.strategies)) {
+            strategiesCell.textContent = video.strategies.join(', ');
+        } else if (typeof video.strategies === 'object') {
+            strategiesCell.textContent = Object.values(video.strategies).join(', ');
+        } else {
+            strategiesCell.textContent = video.strategies || 'N/A';
+        }
+
+        // Handle techniques
+        const techniquesCell = row.insertCell(4);
+        if (Array.isArray(video.techniques) && video.techniques.length > 0) {
+            const techniqueStrings = video.techniques.map(tech => tech.variation).filter(variation => variation != null);
+            techniquesCell.textContent = techniqueStrings.join(', ');
+        } else {
+            techniquesCell.textContent = 'N/A';
+        }
     });
 }
 
