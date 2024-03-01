@@ -6,8 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
         .then(response => response.json())
         .then(data => {
             allVideos = data.videos;
-            // Call displayResults with all videos initially or only after search
-            // displayResults(allVideos);
+            populateDropdowns(allVideos);
         })
         .catch(error => console.error('Error fetching data:', error));
 
@@ -46,39 +45,67 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Filter function
-document.getElementById('search-btn').addEventListener('click', function() {
-        const searchText = document.getElementById('search-box').value.toLowerCase();
+    document.getElementById('search-btn').addEventListener('click', () => {
+        const focusValue = document.getElementById('focus-select').value;
+        const typeValue = document.getElementById('type-select').value;
+        const disciplineValue = document.getElementById('discipline-select').value;
+        const targetValue = document.getElementById('target-select').value;
+
         const filteredVideos = allVideos.filter(video => {
-            // Assuming 'strategies' and 'techniques' are arrays within each video object
-            // Modify the conditions based on your actual data structure
-            return video.course_name.toLowerCase().includes(searchText) ||
-                   video.video_name.toLowerCase().includes(searchText) ||
-                   video.strategies.some(strategy => strategy.toLowerCase().includes(searchText)) ||
-                   video.techniques.some(technique => technique.variation.toLowerCase().includes(searchText));
+            return (!focusValue || video.focus === focusValue) &&
+                   (!typeValue || video.types.includes(typeValue)) &&
+                   (!disciplineValue || video.disciplines.includes(disciplineValue)) &&
+                   (!targetValue || video.targets.includes(targetValue));
         });
 
         displayResults(filteredVideos);
-
-        // Show the results container if it was previously hidden
-        document.getElementById('results-container').classList.remove('hidden');
     });
 
-    // Function to display the search results
-    function displayResults(videos) {
-        const resultsTable = document.getElementById('results-table').getElementsByTagName('tbody')[0];
-        resultsTable.innerHTML = ''; // Clear existing table rows
+function displayResults(videos) {
+    const resultsTable = document.getElementById('results-table').getElementsByTagName('tbody')[0];
+    resultsTable.innerHTML = ''; // Clear existing table rows
 
-        videos.forEach((video, index) => {
-            const row = resultsTable.insertRow();
+    videos.forEach((video, index) => {
+        const row = resultsTable.insertRow();
 
-            // Create cells for course name, video name, etc.
-            const courseNameCell = row.insertCell();
-            courseNameCell.textContent = video.course_name;
-
-            const videoNameCell = row.insertCell();
-            videoNameCell.textContent = video.video_name;
-
-            // Continue creating cells for strategies and techniques...
+        // Create the 'Select' button
+        const selectCell = row.insertCell(0);
+        const selectButton = document.createElement('button');
+        selectButton.textContent = 'Select';
+        selectButton.className = 'select-button';
+        selectButton.addEventListener('click', function() {
+            window.location.href = `video-details.html?index=${index}`;
         });
-    }
+        selectCell.appendChild(selectButton);
+
+        // The rest of the cells
+        const courseNameCell = row.insertCell(1);
+        courseNameCell.textContent = video.course_name;
+
+        const videoNameCell = row.insertCell(2);
+        videoNameCell.textContent = video.video_name;
+
+        // Handle strategies
+        const strategiesCell = row.insertCell(3);
+        if (Array.isArray(video.strategies)) {
+            strategiesCell.textContent = video.strategies.join(', ');
+        } else if (typeof video.strategies === 'object') {
+            strategiesCell.textContent = Object.values(video.strategies).join(', ');
+        } else {
+            strategiesCell.textContent = 'N/A';
+        }
+
+        // Handle techniques
+        const techniquesCell = row.insertCell(4);
+        if (Array.isArray(video.techniques)) {
+            techniquesCell.textContent = video.techniques.map(t => {
+                // Check if technique has a variation property and it's not empty
+                return t.variation ? t.variation : 'N/A';
+            }).join(', ');
+        } else {
+            techniquesCell.textContent = 'N/A';
+        }
+    });
+}
+
 });
