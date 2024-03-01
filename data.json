@@ -114,7 +114,7 @@
                 }
             ]
         }, 
-        {
+         {
             "course_name": "CSA Striking System",
             "video_name": "Course 3: Video 1",
             "focus": "Defensive",
@@ -130,17 +130,25 @@
                 "Head",
                 "Body"
             ],
-            "strategies": {
-                "creating": "Using elbows to create defensive openings and counter opportunities.",
-                "disrupting": "Disrupting the opponent's attack rhythm with sharp elbow counters.",
-                "guarding": "Incorporating elbow strikes in defensive maneuvers to protect against incoming strikes."
-            },
+            "strategies": [
+                "Using elbows to create defensive openings and counter opportunities.",
+                "Disrupting the opponent's attack rhythm with sharp elbow counters.",
+                "Incorporating elbow strikes in defensive maneuvers to protect against incoming strikes."
+            ],
             "techniques": [
-                "Elbows are crucial in Muay Thai and MMA for their effectiveness in close combat and their ability to cause significant damage.",
-                "The diagonal, upward, and back elbow strikes are highlighted for their strategic application in breaking through defenses and creating openings.",
-                "The importance of correct form, including the angle of attack and body positioning, to ensure maximum effectiveness and safety."
+                {
+                    "variation": "Elbow Strikes in Close Combat",
+                    "description": "Elbows are crucial in Muay Thai and MMA for their effectiveness in close combat and their ability to cause significant damage."
+                },
+                {
+                    "variation": "Diagonal, Upward, and Back Elbow Strikes",
+                    "description": "The diagonal, upward, and back elbow strikes are highlighted for their strategic application in breaking through defenses and creating openings."
+                },
+                {
+                    "variation": "Correct Form and Body Positioning",
+                    "description": "The importance of correct form, including the angle of attack and body positioning, to ensure maximum effectiveness and safety."
+                }
             ]
         }
-
     ]
 }
