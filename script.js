@@ -56,6 +56,7 @@ document.addEventListener('DOMContentLoaded', function () {
                    (!typeValue || video.types.includes(typeValue)) &&
                    (!disciplineValue || video.disciplines.includes(disciplineValue)) &&
                    (!targetValue || video.targets.includes(targetValue));
+        document.getElementById('results-container').classList.remove('hidden');
         });
 
         displayResults(filteredVideos);
