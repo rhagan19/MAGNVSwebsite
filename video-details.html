@@ -3,41 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The MAGNVS Library</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Video Details</title>
+    <!-- Add your CSS file link here -->
+    <link rel="stylesheet" href="video-details-styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 <body>
 
-<div class="sidebar">
-    <!-- Sidebar content here -->
+<div id="video-details-container">
+    <h1>Video Details</h1>
+    <div id="video-details">
+        <!-- Video details will be loaded here -->
+    </div>
 </div>
 
-<div class="main-content">
-    <div class="filter-bar">
-        <!-- Filter dropdowns here -->
-        <div class="search-bar">
-            <input type="text" id="search-box" placeholder="Search here...">
-        </div>
-    </div>
-    
-    <div class="table-container">
-        <table>
-            <thead>
-                <tr>
-                    <th>Course Name</th>
-                    <th>Video Name</th>
-                    <th>Strategies</th>
-                    <th>Techniques</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Dynamic table rows go here -->
-            </tbody>
-        </table>
-    </div>
-    <!-- Pagination controls here -->
-</div>
+<script>
+// Assuming 'videos' data is in a separate JSON file (data.json) hosted on the same domain
+document.addEventListener('DOMContentLoaded', () => {
+    const params = new URLSearchParams(window.location.search);
+    const index = params.get('index');
 
-<script src="script.js"></script>
+    if (index) {
+        axios.get('data.json')
+            .then(response => {
+                const video = response.data.videos[index];
+                if (video) {
+                    const detailsContainer = document.getElementById('video-details');
+                    detailsContainer.innerHTML = `
+                        <h2>${video.video_name}</h2>
+                        <p><strong>Course Name:</strong> ${video.course_name}</p>
+                        <p><strong>Focus:</strong> ${video.focus}</p>
+                        <p><strong>Types:</strong> ${video.types.join(', ')}</p>
+                        <p><strong>Disciplines:</strong> ${video.disciplines.join(', ')}</p>
+                        <p><strong>Targets:</strong> ${video.targets.join(', ')}</p>
+                        <p><strong>Strategies:</strong> ${video.strategies.join(', ')}</p>
+                        <p><strong>Techniques:</strong> ${video.techniques.map(technique => technique.variation).join(', ')}</p>
+                    `;
+                } else {
+                    document.getElementById('video-details').innerText = 'Video details not found.';
+                }
+            })
+            .catch(error => console.error('Error fetching video details:', error));
+    } else {
+        document.getElementById('video-details').innerText = 'No video index provided.';
+    }
+});
+</script>
+
 </body>
 </html>
