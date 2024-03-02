@@ -2,13 +2,24 @@ document.addEventListener('DOMContentLoaded', function () {
     let allVideos = [];
 
     // Fetch JSON data
-    fetch('data.json') // Adjust the URL as needed
-        .then(response => response.json())
-        .then(data => {
-            allVideos = data.videos;
+// Fetch JSON data
+fetch('data.json') // Adjust the URL as needed
+    .then(response => response.json())
+    .then(data => {
+        allVideos = data.videos;
+        if (Array.isArray(allVideos) && allVideos.length > 0) {
+            // Call populateDropdowns only if allVideos is a non-empty array
             populateDropdowns(allVideos);
-        })
-        .catch(error => console.error('Error fetching data:', error));
+        } else {
+            // Handle the case where allVideos is empty or not an array
+            console.error('No videos found or data is in an incorrect format.');
+        }
+    })
+    .catch(error => {
+        // Handle any errors during fetch or data processing
+        console.error('Error fetching data:', error);
+    });
+
 
     function populateDropdowns(videos) {
         populateDropdown('focus-select', getUniqueValues(videos, 'focus'));
@@ -32,17 +43,20 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    function getUniqueValues(array, key) {
-        const unique = new Set();
-        array.forEach(item => {
+function getUniqueValues(array, key) {
+    const unique = new Set();
+    array.forEach(item => {
+        if (item[key]) { // Ensure the key exists
             if (Array.isArray(item[key])) {
                 item[key].forEach(subItem => unique.add(subItem));
             } else {
                 unique.add(item[key]);
             }
-        });
-        return [...unique];
-    }
+        }
+    });
+    return [...unique].sort(); // Return a sorted array for better user experience
+}
+
 
     // Filter function
     document.getElementById('search-btn').addEventListener('click', () => {
