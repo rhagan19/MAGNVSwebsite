@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The MAGNVS Library</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
@@ -12,59 +13,18 @@
     <h1>The MAGNVS Library</h1>
 
     <div id="filters">
-        <div class="filter-group">
-            <label for="focus-select">Focus</label>
-            <select id="focus-select">
-                <option value="">Select Focus</option>
-                <!-- Other options will be here -->
-            </select>
-        </div>
-
-        <div class="filter-group">
-            <label for="type-select">Type</label>
-            <select id="type-select">
-                <option value="">Select Type</option>
-                <!-- Other options will be here -->
-            </select>
-        </div>
-
-        <div class="filter-group">
-            <label for="discipline-select">Discipline</label>
-            <select id="discipline-select">
-                <option value="">Select Discipline</option>
-                <!-- Other options will be here -->
-            </select>
-        </div>
-
-        <div class="filter-group">
-            <label for="target-select">Target</label>
-            <select id="target-select">
-                <option value="">Select Target</option>
-                <!-- Other options will be here -->
-            </select>
-        </div>
-
-        <button id="search-btn">Search</button>
+        <!-- Your filter groups here -->
     </div>
 
     <div id="results-container">
         <table id="results-table">
-            <thead>
-                <tr>
-                    <th>Select</th>
-                    <th>Course Name</th>
-                    <th>Video Name</th>
-                    <th>Strategies</th>
-                    <th>Techniques</th>
-                </tr>
-            </thead>
+            <!-- Table headers -->
             <tbody>
             <!-- Results will be dynamically inserted here -->
             </tbody>
         </table>
     </div>
 
-    <!-- Profile page structure -->
     <div id="profile-page" style="display: none;">
         <!-- Profile content will be dynamically inserted here -->
     </div>
