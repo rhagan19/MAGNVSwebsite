@@ -9,24 +9,65 @@
 </head>
 <body>
 
-<div id="library-container">
+<div id="library-container" class="dark-theme">
     <h1>The MAGNVS Library</h1>
 
     <div id="filters">
-        <!-- Your filter groups here -->
+        <!-- Filter group for Focus -->
+        <div class="filter-group">
+            <label for="focus-select">Focus</label>
+            <select id="focus-select">
+                <option value="">Select Focus</option>
+                <!-- Options will be populated by JS -->
+            </select>
+        </div>
+
+        <!-- Filter group for Type -->
+        <div class="filter-group">
+            <label for="type-select">Type</label>
+            <select id="type-select">
+                <option value="">Select Type</option>
+                <!-- Options will be populated by JS -->
+            </select>
+        </div>
+
+        <!-- Filter group for Discipline -->
+        <div class="filter-group">
+            <label for="discipline-select">Discipline</label>
+            <select id="discipline-select">
+                <option value="">Select Discipline</option>
+                <!-- Options will be populated by JS -->
+            </select>
+        </div>
+
+        <!-- Filter group for Target -->
+        <div class="filter-group">
+            <label for="target-select">Target</label>
+            <select id="target-select">
+                <option value="">Select Target</option>
+                <!-- Options will be populated by JS -->
+            </select>
+        </div>
+
+        <!-- Search button -->
+        <button id="search-btn">Search</button>
     </div>
 
     <div id="results-container">
         <table id="results-table">
-            <!-- Table headers -->
+            <thead>
+                <tr>
+                    <th>Select</th>
+                    <th>Course Name</th>
+                    <th>Video Name</th>
+                    <th>Strategies</th>
+                    <th>Techniques</th>
+                </tr>
+            </thead>
             <tbody>
             <!-- Results will be dynamically inserted here -->
             </tbody>
         </table>
-    </div>
-
-    <div id="profile-page" style="display: none;">
-        <!-- Profile content will be dynamically inserted here -->
     </div>
 </div>
 
